@@ -6,7 +6,7 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 23:42:21 by shogura           #+#    #+#              #
-#    Updated: 2022/07/29 09:53:55 by shogura          ###   ########.fr        #
+#    Updated: 2022/07/29 10:07:38 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = $(shell find . -name "*.cpp" -type f)
 OBJDIR = obj
-OBJS = $(SRCS:%.c=$(OBJDIR)/%.o)
+OBJS = $(SRCS:%.cpp=$(OBJDIR)/%.o)
 
 RM = rm -rf
 
@@ -27,12 +27,12 @@ all: $(NAME) $(OBJDIR)
 $(OBJDIR):
 	@mkdir -p $@
 
-$(OBJDIR)/%.o:%.c
+$(OBJS):$(SRCS)
 	@$(CXX) $(CXXFLAGS) $(@F) -c $<
 	@echo "$< =========> $(GRN) $@ $(RES)"
 
 $(NAME):$(OBJS)
-	@$(CXX) -o $(@F) $<
+	@$(CXX) -o $(NAME) $(OBJS)
 	@echo "$(CYN)\n=====link=====$(RES)"
 	@echo "$(YEL)Objects$(RES): $(OBJS)\n"
 	@echo "$(YEL)Flags$(RES): $(CXXFLAGS)\n"
@@ -40,7 +40,7 @@ $(NAME):$(OBJS)
 	@echo "$(CYN)==============$(RES)"
 
 clean:$(OBJS)
-	@$(RM) $^
+	@$(RM) $<
 	@$(RM) $(OBJDIR)
 	@echo "DELETE $<"
 

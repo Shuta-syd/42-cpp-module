@@ -17,8 +17,8 @@
 
 int	main(int argc, char const *argv[])
 {
-	size_t	i;
-	size_t	j;
+	int	i = 0;
+	int	j = 0;
 
 	if (argc == 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;

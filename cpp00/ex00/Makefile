@@ -6,7 +6,7 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 23:42:21 by shogura           #+#    #+#              #
-#    Updated: 2022/07/29 10:07:38 by shogura          ###   ########.fr        #
+#    Updated: 2022/07/29 10:12:08 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,8 @@ all: $(NAME) $(OBJDIR)
 $(OBJDIR):
 	@mkdir -p $@
 
-$(OBJS):$(SRCS)
-	@$(CXX) $(CXXFLAGS) $(@F) -c $<
+$(OBDIR)/%.o:%.c
+	@$(CXX) $(CXXFLAGS) -c $<
 	@echo "$< =========> $(GRN) $@ $(RES)"
 
 $(NAME):$(OBJS)

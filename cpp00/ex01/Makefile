@@ -6,7 +6,7 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 23:42:21 by shogura           #+#    #+#              #
-#    Updated: 2022/07/30 01:45:42 by shogura          ###   ########.fr        #
+#    Updated: 2022/07/30 15:50:48 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,11 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = $(shell find . -name "*.cpp" -type f)
+
 OBJDIR = obj
 OBJS = $(subst ./, ./$(OBJDIR)/, $(SRCS:%.cpp=%.o))
+
+INC = inc/
 
 RM = rm -rf
 
@@ -26,7 +29,7 @@ all: $(NAME)
 
 $(OBJS):$(SRCS)
 	@mkdir -p $(@D)
-	@$(CXX) $(CXXFLAGS) -o $@ -c $<
+	@$(CXX) $(CXXFLAGS) -I$(INC) -o $@ -c $<
 	@echo "$< =========> $(GRN) $@ $(RES)"
 
 $(NAME):$(OBJS)

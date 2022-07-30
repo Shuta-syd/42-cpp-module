@@ -6,31 +6,33 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 02:00:01 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/30 14:09:15 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/30 15:50:04 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #if !defined(CONTACT_HPP)
 #define CONTACT_HPP
 
+#include <iostream>
 #include <string>
 
 class Contact
 {
 public:
-	Contact(/* args */);
+	Contact();
 	~Contact();
 
 private:
-	
+	std::string info[5];
+	int index;
+	enum
+	{
+		FirstName,
+		LastName,
+		NickName,
+		PhoneNumber,
+		DarkestSecret
+	};
 };
-
-Contact::Contact(/* args */)
-{
-}
-
-Contact::~Contact()
-{
-}
 
 #endif // CONTACT_HPP

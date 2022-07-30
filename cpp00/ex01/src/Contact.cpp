@@ -6,7 +6,16 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:59:53 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/30 01:59:54 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/30 15:50:19 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <Contact.hpp>
+
+Contact::Contact()
+{
+}
+
+Contact::~Contact()
+{
+}

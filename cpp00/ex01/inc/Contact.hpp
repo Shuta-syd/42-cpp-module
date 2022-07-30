@@ -6,24 +6,28 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 02:00:01 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/30 19:30:40 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/30 19:58:05 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #if !defined(CONTACT_HPP)
 #define CONTACT_HPP
 
-#include <iostream>
+
 #include <string>
+#include <iostream>
+#include <iomanip>
 
 class Contact
 {
 public:
 	Contact();
 	~Contact();
-	void set_info(int index);
-	std::string info_name(int i);
 	int get_index();
+	void set_info(int index);
+	void display_contact(void);
+	std::string slice(std::string str);
+	std::string info_name(int i);
 
 private:
 	std::string info[5];

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:59:53 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/30 19:31:05 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/30 20:00:23 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,22 @@ std::string Contact::info_name(int i)
 int Contact::get_index(void)
 {
 	return this->index;
+}
+
+std::string Contact::slice(std::string str)
+{
+	if (str.length() > 10)
+		return (str.substr(0, 9) + ".");
+	return (str);
+}
+
+void Contact::display_contact(void)
+{
+	std::cout << "|" << std::setw(10) << index;
+	std::cout << "|" << std::setw(10) << slice(info[FirstName]);
+	std::cout << "|" << std::setw(10) << slice(info[LastName]);
+	std::cout << "|" << std::setw(10) << slice(info[NickName])
+			  << "|"<< std::endl;
 }
 
 Contact::Contact()

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:45:57 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/30 19:34:37 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/30 20:01:30 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ void PhoneBook::search_contact(void)
 
 	std::cout << "Index: ";
 	std::cin >> index;
+	if (index > 8)
+	{
+		std::cout << "This index is out of range";
+		return;
+	}
 	for (int i = 0; i < 8; i++)
 	{
 		if (index == contact[i].get_index())

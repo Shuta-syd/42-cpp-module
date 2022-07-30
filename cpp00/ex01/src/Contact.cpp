@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:59:53 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/30 20:00:23 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/30 20:06:12 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@ void Contact::set_info(int index)
 	{
 		std::cout << info_name(i) << ": ";
 		std::cin >> info[i];
+		if (info[i].empty())
+		{
+			std::cout << "empty is not valid\n"
+					  << "retry : ";
+			std::cin >> info[i];
+		}
 	}
 }
 

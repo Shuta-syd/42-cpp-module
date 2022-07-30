@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:59:53 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/30 16:11:20 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/30 18:50:55 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void Contact::set_info(int index)
 {
-	this->index = index;
+	this->index = index + 1;
 	for (int i = FirstName; i < DarkestSecret; i++)
 	{
 		std::cout << info_name(i) << ": ";

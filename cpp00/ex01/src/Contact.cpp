@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:59:53 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/30 16:05:13 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/30 16:11:20 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ void Contact::set_info(int index)
 std::string Contact::info_name(int i)
 {
 	if (i == FirstName)
-		return ("FirstName");
+		return ("First name");
 	else if (i == LastName)
-		return ("LastName");
+		return ("Last name");
 	else if (i == NickName)
-		return ("NickName");
+		return ("Nick name");
 	else if (i == PhoneNumber)
-		return ("PhoneNumber");
+		return ("Phone number");
 	else if (i == DarkestSecret)
-		return ("DarkestSecret");
+		return ("Darkest secret");
 	return (NULL);
 }
 

@@ -6,7 +6,7 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 23:42:21 by shogura           #+#    #+#              #
-#    Updated: 2022/07/30 15:50:48 by shogura          ###   ########.fr        #
+#    Updated: 2022/07/30 16:37:55 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,13 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = $(shell find . -name "*.cpp" -type f)
+SRCDIR = src
+SRCS = $(shell find $(SRCDIR) -name "*.cpp" -type f)
 
 OBJDIR = obj
-OBJS = $(subst ./, ./$(OBJDIR)/, $(SRCS:%.cpp=%.o))
+OBJS = $(subst $(SRCDIR), ./$(OBJDIR), $(SRCS:%.cpp=%.o))
 
-INC = inc/
+INC = inc
 
 RM = rm -rf
 
@@ -40,12 +41,10 @@ $(NAME):$(OBJS)
 	@echo "     $(MGN)--->$(RES) $(GRN)$(NAME)$(RES)"
 	@echo "$(CYN)==============$(RES)"
 
-clean:$(OBJS)
-	@$(RM) $<
-	@$(RM) $(NAME)
+clean:
+	$(RM) $(OBJS)
+	$(RM) $(NAME)
 	@$(RM) $(OBJDIR)
-	@echo "DELETE $<"
-	@echo "DELETE $(NAME)"
 
 fclean:clean
 

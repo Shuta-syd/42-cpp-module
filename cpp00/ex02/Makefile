@@ -6,11 +6,11 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 23:42:21 by shogura           #+#    #+#              #
-#    Updated: 2022/07/30 20:39:11 by shogura          ###   ########.fr        #
+#    Updated: 2022/07/30 20:54:41 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = accounts
 
 CXX = c++
 

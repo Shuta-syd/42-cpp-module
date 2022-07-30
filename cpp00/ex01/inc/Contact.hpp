@@ -1,20 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/30 01:45:57 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/30 01:46:15 by shogura          ###   ########.fr       */
+/*   Created: 2022/07/30 02:00:01 by shogura           #+#    #+#             */
+/*   Updated: 2022/07/30 14:09:15 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#if !defined(CONTACT_HPP)
+#define CONTACT_HPP
+
 #include <string>
 
-int main(int argc, char const *argv[])
+class Contact
 {
+public:
+	Contact(/* args */);
+	~Contact();
+
+private:
 	
-	return 0;
+};
+
+Contact::Contact(/* args */)
+{
 }
+
+Contact::~Contact()
+{
+}
+
+#endif // CONTACT_HPP

@@ -6,7 +6,7 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 23:42:21 by shogura           #+#    #+#              #
-#    Updated: 2022/07/30 16:37:55 by shogura          ###   ########.fr        #
+#    Updated: 2022/07/30 18:58:20 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ RM = rm -rf
 
 all: $(NAME)
 
-$(OBJS):$(SRCS)
+$(OBJDIR)/%.o:$(SRCDIR)/%.cpp
 	@mkdir -p $(@D)
 	@$(CXX) $(CXXFLAGS) -I$(INC) -o $@ -c $<
 	@echo "$< =========> $(GRN) $@ $(RES)"

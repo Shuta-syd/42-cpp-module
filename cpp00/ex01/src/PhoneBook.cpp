@@ -6,14 +6,8 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:45:57 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/30 13:47:45 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/30 15:51:29 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <PhoneBook.hpp>
-
-int main(int argc, char const *argv[])
-{
-
-	return 0;
-}

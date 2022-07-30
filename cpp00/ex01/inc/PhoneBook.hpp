@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:58:54 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/30 18:50:38 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/30 20:26:37 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	void add_contact(void);
 	void search_contact(void);
 private:
-	int index;
+	int _index;
 	Contact contact[8];
 };
 

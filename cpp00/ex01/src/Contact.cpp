@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:59:53 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/30 20:06:12 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/30 20:19:42 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,19 @@ std::string Contact::slice(std::string str)
 	return (str);
 }
 
-void Contact::display_contact(void)
+void Contact::display_contact_header(void)
 {
 	std::cout << "|" << std::setw(10) << index;
 	std::cout << "|" << std::setw(10) << slice(info[FirstName]);
 	std::cout << "|" << std::setw(10) << slice(info[LastName]);
 	std::cout << "|" << std::setw(10) << slice(info[NickName])
 			  << "|"<< std::endl;
+}
+
+void Contact::display_contact_all(void)
+{
+	for (int i = FirstName; i < DarkestSecret; i++)
+		std::cout << info_name(i) << ": " << info[i] << std::endl;
 }
 
 Contact::Contact()

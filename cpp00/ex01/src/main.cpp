@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 15:32:12 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/30 18:53:57 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/30 19:24:05 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int main(void)
 	std::cout << "Welcome to PhoneBook! Please select commands!!\n"
 			  << "[ADD] -> you can add contact to book\n"
 			  << "[SEARCH] -> you can for contact\n"
-			  << "[EXIT] -> you can terminate this\n\n";
+			  << "[EXIT] -> you can terminate\n"
+			  << std::endl;
 	while (42)
 	{
 		std::cout << "command > ";

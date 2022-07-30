@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:59:53 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/30 18:50:55 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/30 19:31:05 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ std::string Contact::info_name(int i)
 	else if (i == DarkestSecret)
 		return ("Darkest secret");
 	return (NULL);
+}
+
+int Contact::get_index(void)
+{
+	return this->index;
 }
 
 Contact::Contact()

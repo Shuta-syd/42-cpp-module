@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:45:57 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/30 18:50:49 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/30 19:34:37 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,18 @@ void PhoneBook::add_contact(void)
 
 void PhoneBook::search_contact(void)
 {
-	std::cout << "coming soon\n";
+	int index;
+
+	std::cout << "Index: ";
+	std::cin >> index;
+	for (int i = 0; i < 8; i++)
+	{
+		if (index == contact[i].get_index())
+		{
+			contact[i].display_contact();
+			break;
+		}
+	}
 }
 
 PhoneBook::PhoneBook() : index(0)

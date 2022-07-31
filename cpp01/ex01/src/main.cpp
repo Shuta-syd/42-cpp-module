@@ -6,15 +6,23 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 18:20:23 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/31 18:53:43 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/31 19:04:59 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Zombie.hpp>
-	Zombie *
-	zombieHorde(int N, std::string name);
+#include <cstdlib>
+Zombie *zombieHorde(int N, std::string name);
 
-int main(void)
+/*
+__attribute__((destructor))
+static void destructor(void)
+{
+	system("leaks -q zombieee");
+}
+*/
+
+int	main(void)
 {
 	Zombie *zombies = zombieHorde(5,"zombie man");
 

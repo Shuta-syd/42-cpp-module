@@ -6,20 +6,27 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 19:27:38 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/31 19:29:12 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/01 03:08:19 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HUMANA_HPP
 #define HUMANA_HPP
 
+#include <string>
+#include <iostream>
+#include <Weapon.hpp>
+
 class HumanA
 {
-private:
-	/* data */
 public:
-	HumanA(/* args */);
+	HumanA(std::string, Weapon&);
 	~HumanA();
+	void attack(void);
+
+private:
+	Weapon &_weapon;
+	std::string _name;
 };
 
 #endif

@@ -6,13 +6,18 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 20:50:21 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/31 16:32:55 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/31 16:47:26 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Account.hpp>
 #include <iostream>
 #include <ctime>
+
+int Account::_nbAccounts = 0;
+int Account::_totalAmount = 0;
+int Account::_totalNbDeposits = 0;
+int Account::_totalNbWithdrawals = 0;
 
 Account::Account(int initial_deposit)
 	: _accountIndex(_nbAccounts), _amount(initial_deposit),
@@ -23,12 +28,16 @@ Account::Account(int initial_deposit)
 
 	_displayTimestamp();
 	std::cout << " index:" << _accountIndex
-			  << ";amount:" << _totalAmount
+			  << ";amount:" << _amount
 			  << ";created" << std::endl;
 }
 
 Account::~Account(void)
 {
+	_nbAccounts--;
+	_totalAmount -= _amount;
+
+	_displayTimestamp();
 	std::cout << " index:" << _accountIndex
 			  << ";amount:" << _amount
 			  << ";closed" << std::endl;
@@ -52,13 +61,13 @@ void Account::makeDeposit(int deposit)
 
 		_totalNbDeposits++;
 		_totalAmount += deposit;
-		std::cout << "deposit:" << deposit
+		std::cout << ";deposit:" << deposit
 				  << ";amount:" << _amount
-				  << ";nb_deposit:" << _nbDeposits
+				  << ";nb_deposits:" << _nbDeposits
 				  << std::endl;
 	}
 	else
-		std::cout << ";deposit refused" << std::endl;
+		std::cout << ";deposit:refused" << std::endl;
 }
 
 bool Account::makeWithdrawal(int withdrawal)
@@ -81,7 +90,7 @@ bool Account::makeWithdrawal(int withdrawal)
 	}
 	else
 	{
-		std::cout << ";withdrawal refused" << std::endl;
+		std::cout << ";withdrawal:refused" << std::endl;
 		return (false);
 	}
 }

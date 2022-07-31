@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 15:32:12 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/30 19:24:05 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/30 20:49:40 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int main(void)
 			phone_book.search_contact();
 		else if (input == "EXIT")
 			break ;
+		else
+			std::cout << "Not available command" << std::endl;
 	}
 	return (0);
 }

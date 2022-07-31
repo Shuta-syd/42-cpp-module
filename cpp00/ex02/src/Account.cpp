@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 20:50:21 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/31 15:24:45 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/31 15:30:10 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,16 @@ void Account::displayAccountsInfos(void)
 	std::cout << " accounts:" << getNbAccounts()
 			  << ";total:" << getTotalAmount()
 			  << ";deposits:" << getNbDeposits()
-			  << ";withdrawals:" << getNbWithdrawals();
+			  << ";withdrawals:" << getNbWithdrawals() << std::endl;
+}
+
+void Account::displayStatus(void) const
+{
+	_displayTimestamp();
+	std::cout << " index:" << _accountIndex
+			  << ";amount:" << _amount
+			  << ";deposit:" << _nbDeposits
+			  << ";withdrawal:" << _nbWithdrawals << std::endl;
 }
 
 void Account::_displayTimestamp(void)

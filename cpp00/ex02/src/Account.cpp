@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 20:50:21 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/31 16:07:52 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/31 16:25:55 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,16 @@ Account::~Account(void)
 
 void Account::makeDeposit(int deposit)
 {
-	_nbDeposits++;
 	_displayTimestamp();
 	std::cout << " index:" << _accountIndex
 			  << ";p_amount:" << _amount;
 	if (deposit > 0)
 	{
+		_nbDeposits++;
 		_amount += deposit;
+		
+		_totalNbDeposits++;
+		_totalAmount += deposit;
 		std::cout << "deposit:" << deposit
 				  << ";amount:" << _amount
 				  << ";nb_deposit:" << _nbDeposits
@@ -47,6 +50,31 @@ void Account::makeDeposit(int deposit)
 	}
 	else
 		std::cout << ";deposit refused" << std::endl;
+}
+
+bool Account::makeWithdrawal(int withdrawal)
+{
+	_displayTimestamp();
+	std::cout << " index:" << _accountIndex
+			  << ";p_amount:" << _amount;
+	if (_amount - withdrawal >= 0)
+	{
+		_nbWithdrawals++;
+		_amount -= withdrawal;
+
+		_totalNbWithdrawals++;
+		_totalAmount -= withdrawal;
+		std::cout << ";withdrawal:" << withdrawal
+				  << ";amount:" << _amount
+				  << ";nb_withdrawals" << _nbWithdrawals
+				  << std::endl;
+		return (true);
+	}
+	else
+	{
+		std::cout << ";withdrawal refused" << std::endl;
+		return (false);
+	}
 }
 
 void Account::displayAccountsInfos(void)

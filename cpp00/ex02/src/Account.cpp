@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 20:50:21 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/31 15:57:17 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/31 16:07:52 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,24 @@ Account::Account(int initial_deposit)
 
 Account::~Account(void)
 {
+}
+
+void Account::makeDeposit(int deposit)
+{
+	_nbDeposits++;
+	_displayTimestamp();
+	std::cout << " index:" << _accountIndex
+			  << ";p_amount:" << _amount;
+	if (deposit > 0)
+	{
+		_amount += deposit;
+		std::cout << "deposit:" << deposit
+				  << ";amount:" << _amount
+				  << ";nb_deposit:" << _nbDeposits
+				  << std::endl;
+	}
+	else
+		std::cout << ";deposit refused" << std::endl;
 }
 
 void Account::displayAccountsInfos(void)

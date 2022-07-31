@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/31 17:05:58 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/31 18:30:12 by shogura          ###   ########.fr       */
+/*   Created: 2022/07/31 18:20:06 by shogura           #+#    #+#             */
+/*   Updated: 2022/07/31 18:33:15 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#include <Zombie.hpp>
 
-#include <iostream>
-#include <string>
-class Zombie
+Zombie *zombieHorde(int N, std::string name)
 {
-public:
-	Zombie();
-	Zombie(std::string);
-	~Zombie();
-	void announce(void) const ;
-	void set_name(std::string);
+	Zombie *zombies = new Zombie[N];
 
-private:
-	std::string _name;
-
-};
-
-#endif
+	if (zombies == nullptr)
+	{
+		std::cerr << "[error]: could not new Zombie class instance" << std::endl;
+		return (nullptr);
+	}
+	for (int i = 0; i < N; i++)
+		zombies[i].set_name(name);
+	return (zombies);
+}

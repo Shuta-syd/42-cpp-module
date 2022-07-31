@@ -6,11 +6,11 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 23:42:21 by shogura           #+#    #+#              #
-#    Updated: 2022/07/31 17:04:57 by shogura          ###   ########.fr        #
+#    Updated: 2022/07/31 17:49:32 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = accounts
+NAME = zombieee
 
 CXX = c++
 

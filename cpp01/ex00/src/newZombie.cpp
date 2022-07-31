@@ -6,7 +6,13 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 17:07:20 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/31 17:07:21 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/31 17:43:18 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <Zombie.hpp>
+
+Zombie* newZombie(std::string name)
+{
+	return (new Zombie(name));
+}

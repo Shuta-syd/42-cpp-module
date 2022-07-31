@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 20:50:21 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/31 16:25:55 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/31 16:32:55 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,16 @@ Account::Account(int initial_deposit)
 
 Account::~Account(void)
 {
+	std::cout << " index:" << _accountIndex
+			  << ";amount:" << _amount
+			  << ";closed" << std::endl;
 }
+
+int Account::checkAmount(void) const { return _amount; }
+int Account::getNbAccounts(void) { return _nbAccounts; }
+int Account::getTotalAmount(void) { return _totalAmount; }
+int Account::getNbDeposits(void) { return _totalNbDeposits; }
+int Account::getNbWithdrawals(void) { return _totalNbWithdrawals; }
 
 void Account::makeDeposit(int deposit)
 {
@@ -40,7 +49,7 @@ void Account::makeDeposit(int deposit)
 	{
 		_nbDeposits++;
 		_amount += deposit;
-		
+
 		_totalNbDeposits++;
 		_totalAmount += deposit;
 		std::cout << "deposit:" << deposit

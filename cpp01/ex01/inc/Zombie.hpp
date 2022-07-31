@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 17:05:58 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/31 18:25:39 by shogura          ###   ########.fr       */
+/*   Updated: 2022/07/31 18:46:39 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@
 class Zombie
 {
 public:
-	Zombie(std::string name);
+	Zombie();
+	Zombie(std::string);
 	~Zombie();
-	void announce(void);
+	void announce(void) const;
+	void set_name(std::string);
 
 private:
 	std::string _name;

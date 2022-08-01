@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 09:24:32 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/01 09:55:39 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/01 11:09:29 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string>
 #include <iostream>
+#include <fstream>
 
 class replace_str
 {
@@ -23,6 +24,7 @@ public:
 	replace_str();
 	~replace_str();
 	bool empty(void);
+	void replace(std::fstream, std::fstream);
 
 private:
 	std::string _before;

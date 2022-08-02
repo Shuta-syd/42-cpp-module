@@ -6,24 +6,36 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:59:53 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/30 20:19:42 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/01 13:44:02 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Contact.hpp>
 
+Contact::Contact()
+{
+}
+
+Contact::~Contact()
+{
+}
+
 void Contact::set_info(int index)
 {
-	this->index = index + 1;
-	for (int i = FirstName; i < DarkestSecret; i++)
+	this->_index = index + 1;
+	for (int i = FirstName; i <= DarkestSecret; i++)
 	{
 		std::cout << info_name(i) << ": ";
-		std::cin >> info[i];
-		if (info[i].empty())
+		std::cin >> _info[i];
+		if (std::cin.eof())
+			std::exit(1);
+		if (_info[i].empty())
 		{
 			std::cout << "empty is not valid\n"
 					  << "retry : ";
-			std::cin >> info[i];
+			std::cin >> _info[i];
+			if (std::cin.eof())
+				std::exit(1);
 		}
 	}
 }
@@ -45,7 +57,7 @@ std::string Contact::info_name(int i)
 
 int Contact::get_index(void)
 {
-	return this->index;
+	return this->_index;
 }
 
 std::string Contact::slice(std::string str)
@@ -57,23 +69,15 @@ std::string Contact::slice(std::string str)
 
 void Contact::display_contact_header(void)
 {
-	std::cout << "|" << std::setw(10) << index;
-	std::cout << "|" << std::setw(10) << slice(info[FirstName]);
-	std::cout << "|" << std::setw(10) << slice(info[LastName]);
-	std::cout << "|" << std::setw(10) << slice(info[NickName])
+	std::cout << "|" << std::setw(10) << _index;
+	std::cout << "|" << std::setw(10) << slice(_info[FirstName]);
+	std::cout << "|" << std::setw(10) << slice(_info[LastName]);
+	std::cout << "|" << std::setw(10) << slice(_info[NickName])
 			  << "|"<< std::endl;
 }
 
 void Contact::display_contact_all(void)
 {
-	for (int i = FirstName; i < DarkestSecret; i++)
-		std::cout << info_name(i) << ": " << info[i] << std::endl;
-}
-
-Contact::Contact()
-{
-}
-
-Contact::~Contact()
-{
+	for (int i = FirstName; i <= DarkestSecret; i++)
+		std::cout << info_name(i) << ": " << _info[i] << std::endl;
 }

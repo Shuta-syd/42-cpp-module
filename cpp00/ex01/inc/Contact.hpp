@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 02:00:01 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/30 20:18:24 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/01 13:30:53 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ public:
 	std::string info_name(int i);
 
 private:
-	std::string info[5];
-	int index;
+	std::string _info[5];
+	int _index;
 	enum
 	{
 		FirstName,

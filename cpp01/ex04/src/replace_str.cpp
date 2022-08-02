@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 09:23:40 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/01 11:09:36 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/01 12:12:57 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,20 @@ bool replace_str::empty(void)
 	return false;
 }
 
-void replace_str::replace(std::fstream r_file, std::fstream w_file)
+void replace_str::replace(std::fstream &r_file, std::fstream &w_file)
 {
-	std::string	line;
+	std::string line;
+	std::size_t index;
 
 	while (std::getline(r_file, line))
 	{
-
+		index = line.find(_before);
+		while (index != std::string::npos)
+		{
+			line.erase(index, _before.length());
+			line.insert(index, _after);
+		}
+		w_file << line;
 	}
+	w_file << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 10:30:04 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/01 11:05:52 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/01 12:18:01 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ file::file()
 file::~file()
 {
 }
+
+std::fstream *get_file_stream(void){return _file};
 
 bool	file::r_open(std::string filename)
 {
@@ -55,4 +57,9 @@ bool file::w_open(std::string filename)
 		return false;
 	}
 	return true;
+}
+
+void close(void)
+{
+	_file.close;
 }

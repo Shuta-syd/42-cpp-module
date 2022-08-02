@@ -6,11 +6,11 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 23:42:21 by shogura           #+#    #+#              #
-#    Updated: 2022/08/02 14:55:13 by shogura          ###   ########.fr        #
+#    Updated: 2022/08/02 15:24:31 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = replace
+NAME = harl
 
 CXX = c++
 

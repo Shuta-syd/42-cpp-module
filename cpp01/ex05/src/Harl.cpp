@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   c_file.hpp                                         :+:      :+:    :+:   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/01 10:30:13 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/01 12:20:09 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/02 15:24:55 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/02 15:25:42 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef C_FILE_HPP
-#define C_FILE_HPP
+#include <Harl.hpp>
 
-#include <string>
-#include <fstream>
-
-class c_file
+Harl::Harl(/* args */)
 {
-public:
-	c_file();
-	~c_file();
-	bool r_open(std::string);
-	bool w_open(std::string);
-	std::fstream *get_file_stream(void);
-	void close(void);
+}
 
-private:
-	std::fstream& _file;
-};
-
-#endif
+Harl::~Harl()
+{
+}

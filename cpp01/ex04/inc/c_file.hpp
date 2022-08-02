@@ -1,46 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   c_file.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/30 02:00:01 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/01 13:30:53 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/01 10:30:13 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/01 12:20:09 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined(CONTACT_HPP)
-#define CONTACT_HPP
-
+#ifndef C_FILE_HPP
+#define C_FILE_HPP
 
 #include <string>
-#include <iostream>
-#include <iomanip>
+#include <fstream>
 
-class Contact
+class c_file
 {
 public:
-	Contact();
-	~Contact();
-	int get_index(void);
-	void set_info(int index);
-	void display_contact_header(void);
-	void display_contact_all(void);
-	std::string slice(std::string str);
-	std::string info_name(int i);
+	c_file();
+	~c_file();
+	bool r_open(std::string);
+	bool w_open(std::string);
+	std::fstream *get_file_stream(void);
+	void close(void);
 
 private:
-	std::string _info[5];
-	int _index;
-	enum
-	{
-		FirstName,
-		LastName,
-		NickName,
-		PhoneNumber,
-		DarkestSecret
-	};
+	std::fstream& _file;
 };
 
-#endif // CONTACT_HPP
+#endif

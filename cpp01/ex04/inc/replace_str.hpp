@@ -1,46 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   replace_str.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/30 02:00:01 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/01 13:30:53 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/01 09:24:32 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/01 11:09:29 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined(CONTACT_HPP)
-#define CONTACT_HPP
-
+#ifndef REPLACE_STR_HPP
+#define REPLACE_STR_HPP
 
 #include <string>
 #include <iostream>
-#include <iomanip>
+#include <fstream>
 
-class Contact
+class replace_str
 {
 public:
-	Contact();
-	~Contact();
-	int get_index(void);
-	void set_info(int index);
-	void display_contact_header(void);
-	void display_contact_all(void);
-	std::string slice(std::string str);
-	std::string info_name(int i);
+	replace_str(std::string, std::string);
+	replace_str();
+	~replace_str();
+	bool empty(void);
+	void replace(std::fstream, std::fstream);
 
 private:
-	std::string _info[5];
-	int _index;
-	enum
-	{
-		FirstName,
-		LastName,
-		NickName,
-		PhoneNumber,
-		DarkestSecret
-	};
+	std::string _before;
+	std::string _after;
 };
-
-#endif // CONTACT_HPP
+#endif

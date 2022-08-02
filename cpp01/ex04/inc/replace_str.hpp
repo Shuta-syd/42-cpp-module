@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 09:24:32 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/01 11:09:29 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/02 14:50:29 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ public:
 	replace_str(std::string, std::string);
 	replace_str();
 	~replace_str();
-	bool empty(void);
-	void replace(std::fstream, std::fstream);
+	void replace(std::ifstream&, std::ofstream&);
 
 private:
 	std::string _before;

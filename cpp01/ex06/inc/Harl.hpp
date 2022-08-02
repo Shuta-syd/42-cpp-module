@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 15:24:40 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/02 19:34:57 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/02 15:24:48 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/02 20:24:20 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Harl.hpp>
+#ifndef HARL_HPP
+#define HARL_HPP
 
-int main(void)
+#include <iostream>
+#include <string>
+class Harl
 {
-	Harl harl;
+public:
+	Harl();
+	~Harl();
+	void complain(std::string);
 
-	harl.complain("DEBUG");
-	harl.complain("INFO");
-	harl.complain("WARNING");
-	harl.complain("ERROR");
-	harl.complain("TEST");
-	harl.complain("debug");
-	return (0);
-}
+private:
+	void debug(void);
+	void info(void);
+	void warning(void);
+	void error(void);
+};
+
+#endif

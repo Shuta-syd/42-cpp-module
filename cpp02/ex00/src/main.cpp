@@ -6,7 +6,14 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 20:36:56 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/02 20:36:57 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/03 19:55:12 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <Fixed.hpp>
+
+int main(int argc, char const *argv[])
+{
+
+	return 0;
+}

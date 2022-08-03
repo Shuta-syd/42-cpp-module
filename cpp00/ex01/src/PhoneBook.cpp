@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:45:57 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/03 23:39:26 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/03 23:44:28 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void PhoneBook::search_contact(void)
 		std::cout << "No Data" << std::endl;
 		return ;
 	}
-	for (int i = 0; i < this->_index; i++)
+	for (int i = 0; i < this->_index && i < 8; i++)
 		contact[i].display_contact_header();
 	while (!isNumeric(input))
 	{

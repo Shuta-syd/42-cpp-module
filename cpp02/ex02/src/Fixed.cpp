@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 20:36:55 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/04 23:30:03 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/05 00:06:04 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,7 @@ Fixed Fixed::operator--(int)
 	return ret;
 }
 
-static Fixed& min(Fixed& a, Fixed& b)
+Fixed& min(Fixed& a, Fixed& b)
 {
 	if (a > b)
 		return b;
@@ -140,15 +140,15 @@ static Fixed& min(Fixed& a, Fixed& b)
 		return a;
 }
 
-static const Fixed& min(const Fixed& a, const Fixed& b)
+const Fixed& min(const Fixed& a, const Fixed& b)
 {
-	if (a > b)
+	if ((Fixed &)a > (Fixed &)b)
 		return b;
 	else
 		return a;
 }
 
-static Fixed& max(Fixed& a, Fixed& b)
+Fixed& max(Fixed& a, Fixed& b)
 {
 	if (a > b)
 		return a;
@@ -156,9 +156,9 @@ static Fixed& max(Fixed& a, Fixed& b)
 		return b;
 }
 
-static const Fixed& max(const Fixed& a, const Fixed& b)
+const Fixed& max(const Fixed& a, const Fixed& b)
 {
-	if (a > b)
+	if ((Fixed &)a > (Fixed &)b)
 		return a;
 	else
 		return b;

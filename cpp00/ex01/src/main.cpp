@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 15:32:12 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/01 13:21:11 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/03 23:11:18 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(void)
 	while (42)
 	{
 		std::cout << "command > ";
-		std::cin >> input;
+		std::getline(std::cin, input);
 		if (input == "ADD")
 			phone_book.add_contact();
 		else if (input == "SEARCH")

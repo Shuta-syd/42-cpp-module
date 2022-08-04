@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 20:36:55 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/04 22:41:04 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/04 23:30:03 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,90 +44,124 @@ Fixed& Fixed::operator=(const Fixed &cp)
 
 bool Fixed::operator>(const Fixed &cp)
 {
-
+	return this->_val > cp._val;
 }
 
 bool Fixed::operator<(const Fixed &cp)
 {
-
+	return this->_val < cp._val;
 }
 
 bool Fixed::operator>=(const Fixed &cp)
 {
-
+	return this->_val >= cp._val;
 }
 
 bool Fixed::operator<=(const Fixed &cp)
 {
-
+	return this->_val <= cp._val;
 }
 
 bool Fixed::operator==(const Fixed &cp)
 {
-
+	return this->_val == cp._val;
 }
 
 bool Fixed::operator!=(const Fixed &cp)
 {
-
+	return this->_val != cp._val;
 }
 
-Fixed& Fixed::operator+(const Fixed &cp)
+Fixed Fixed::operator+(const Fixed &cp)
 {
+	Fixed ret;
 
+	ret._val = this->_val + cp._val;
+	return ret;
 }
 
-Fixed& Fixed::operator-(const Fixed &cp)
+Fixed Fixed::operator-(const Fixed &cp)
 {
+	Fixed ret;
 
+	ret._val = this->_val - cp._val;
+	return ret;
 }
 
-Fixed& Fixed::operator*(const Fixed &cp)
+Fixed Fixed::operator*(const Fixed &cp)
 {
+	Fixed ret;
 
+	ret._val = this->_val * cp._val;
+	return ret;
 }
 
-Fixed& Fixed::operator/(const Fixed &cp)
+Fixed Fixed::operator/(const Fixed &cp)
 {
+	Fixed ret;
 
+	ret._val = this->_val / cp._val;
+	return ret;
 }
 
 Fixed& Fixed::operator++(void)
 {
-
+	this->_val++;
+	return *this;
 }
+
 Fixed Fixed::operator++(int)
 {
+	Fixed ret(*this);
 
+	ret._val++;
+	return ret;
 }
 
 Fixed& Fixed::operator--(void)
 {
-
+	this->_val--;
+	return *this;
 }
-Fixed Fixed::operator--(int )
-{
 
+Fixed Fixed::operator--(int)
+{
+	Fixed ret(*this);
+
+	ret._val--;
+	return ret;
 }
 
 static Fixed& min(Fixed& a, Fixed& b)
 {
-
+	if (a > b)
+		return b;
+	else
+		return a;
 }
 
-static Fixed& min(const Fixed& a, const Fixed& b)
+static const Fixed& min(const Fixed& a, const Fixed& b)
 {
-
+	if (a > b)
+		return b;
+	else
+		return a;
 }
 
 static Fixed& max(Fixed& a, Fixed& b)
 {
-
+	if (a > b)
+		return a;
+	else
+		return b;
 }
 
-static Fixed& max(const Fixed& a, const Fixed& b)
+static const Fixed& max(const Fixed& a, const Fixed& b)
 {
-
+	if (a > b)
+		return a;
+	else
+		return b;
 }
 
 std::ostream &operator<<(std::ostream& stream, const Fixed& fixed_class)

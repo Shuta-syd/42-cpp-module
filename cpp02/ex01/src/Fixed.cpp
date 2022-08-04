@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 20:36:55 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/04 20:47:48 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/04 21:33:17 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,16 @@ Fixed::Fixed(const Fixed &cp) : _val(cp._val)
 	*this = cp;
 }
 
-Fixed::Fixed(int val) : _val(val)
+Fixed::Fixed(int val)
 {
 	std::cout << "Int constructor called" << std::endl;
+	this->_val = val << _bits;
 }
 
-Fixed::Fixed(float val) : _val(0)
+Fixed::Fixed(float val)
 {
-	this->_val = (int)val;
 	std::cout << "Float constructor called" << std::endl;
+	this->_val = roundf(val * (1 << _bits));
 }
 
 Fixed::~Fixed(){
@@ -66,10 +67,10 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-	return (float)this->_val;
+	return (float)_val / (1 << _bits);
 }
 
 int Fixed::toInt(void) const
 {
-	return _val;
+	return (int)_val / (1 << _bits);
 }

@@ -6,23 +6,29 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 20:36:56 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/06 15:31:58 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/07 00:12:30 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Fixed.hpp>
+#include <Point.hpp>
 #include <iostream>
 
 int main(void)
 {
-	Fixed a;
-	Fixed const b(Fixed(5.05f) * Fixed(2));
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max(a, b) << std::endl;
+	Point a(2, 3);
+	Point b(6, 6);
+	Point c(4, 1);
+	Point p_in(3, 2);
+	Point p_out(8, 9);
+
+	std::cout << "a:" << a << std::endl;
+	std::cout << "b:" << b << std::endl;
+	std::cout << "c:" << c << std::endl;
+
+	std::cout << "point in:" << p_in << std::endl;
+	std::cout << "this point is " << bsp(a, b, c, p_in) << std::endl;
+
+	std::cout << "point out:" << p_out << std::endl;
+	std::cout << "this point is " << bsp(a, b, c, p_out) << std::endl;
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 18:42:42 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/06 23:00:38 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/07 00:37:35 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,17 @@ Point &Point::operator=(const Point &point)
 
 float Point::get_x(void) const
 {
-	return this->_x.getRawBits();
+	return this->_x.toFloat();
 }
 
 float Point::get_y(void) const
 {
-	return this->_y.getRawBits();
+	return this->_y.toFloat();
+}
+
+std::ostream &operator<<(std::ostream &stream, const Point &point)
+{
+	stream << point.get_x() << ", " << point.get_y();
+
+	return stream;
 }

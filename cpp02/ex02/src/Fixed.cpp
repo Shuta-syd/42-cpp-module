@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 20:36:55 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/05 00:06:04 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/06 16:03:21 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,11 @@ Fixed::Fixed(float val)
 	this->_val = roundf(val * (1 << _bits));
 }
 
-Fixed::~Fixed(){
+Fixed::~Fixed()
+{
 }
 
-Fixed& Fixed::operator=(const Fixed &cp)
+Fixed &Fixed::operator=(const Fixed &cp)
 {
 	this->_val = cp._val;
 	return *this;
@@ -76,7 +77,7 @@ Fixed Fixed::operator+(const Fixed &cp)
 {
 	Fixed ret;
 
-	ret._val = this->_val + cp._val;
+	ret._val = (this->_val + cp._val) / (1 << _bits);
 	return ret;
 }
 
@@ -84,7 +85,7 @@ Fixed Fixed::operator-(const Fixed &cp)
 {
 	Fixed ret;
 
-	ret._val = this->_val - cp._val;
+	ret._val = (this->_val - cp._val) / (1 << _bits);
 	return ret;
 }
 
@@ -92,7 +93,7 @@ Fixed Fixed::operator*(const Fixed &cp)
 {
 	Fixed ret;
 
-	ret._val = this->_val * cp._val;
+	ret._val = (this->_val * cp._val) / (1 << _bits);
 	return ret;
 }
 
@@ -100,11 +101,11 @@ Fixed Fixed::operator/(const Fixed &cp)
 {
 	Fixed ret;
 
-	ret._val = this->_val / cp._val;
+	ret._val = (this->_val / cp._val) / (1 << _bits);
 	return ret;
 }
 
-Fixed& Fixed::operator++(void)
+Fixed &Fixed::operator++(void)
 {
 	this->_val++;
 	return *this;
@@ -114,11 +115,11 @@ Fixed Fixed::operator++(int)
 {
 	Fixed ret(*this);
 
-	ret._val++;
+	this->_val++;
 	return ret;
 }
 
-Fixed& Fixed::operator--(void)
+Fixed &Fixed::operator--(void)
 {
 	this->_val--;
 	return *this;
@@ -128,11 +129,11 @@ Fixed Fixed::operator--(int)
 {
 	Fixed ret(*this);
 
-	ret._val--;
+	this->_val--;
 	return ret;
 }
 
-Fixed& min(Fixed& a, Fixed& b)
+Fixed &Fixed::min(Fixed &a, Fixed &b)
 {
 	if (a > b)
 		return b;
@@ -140,7 +141,7 @@ Fixed& min(Fixed& a, Fixed& b)
 		return a;
 }
 
-const Fixed& min(const Fixed& a, const Fixed& b)
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b)
 {
 	if ((Fixed &)a > (Fixed &)b)
 		return b;
@@ -148,7 +149,7 @@ const Fixed& min(const Fixed& a, const Fixed& b)
 		return a;
 }
 
-Fixed& max(Fixed& a, Fixed& b)
+Fixed &Fixed::max(Fixed &a, Fixed &b)
 {
 	if (a > b)
 		return a;
@@ -156,7 +157,7 @@ Fixed& max(Fixed& a, Fixed& b)
 		return b;
 }
 
-const Fixed& max(const Fixed& a, const Fixed& b)
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
 {
 	if ((Fixed &)a > (Fixed &)b)
 		return a;
@@ -164,7 +165,7 @@ const Fixed& max(const Fixed& a, const Fixed& b)
 		return b;
 }
 
-std::ostream &operator<<(std::ostream& stream, const Fixed& fixed_class)
+std::ostream &operator<<(std::ostream &stream, const Fixed &fixed_class)
 {
 	stream << fixed_class.toFloat();
 
@@ -174,4 +175,9 @@ std::ostream &operator<<(std::ostream& stream, const Fixed& fixed_class)
 float Fixed::toFloat(void) const
 {
 	return (float)_val / (1 << _bits);
+}
+
+int Fixed::getRawBits(void) const
+{
+	return this->_val;
 }

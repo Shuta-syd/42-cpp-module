@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 18:42:36 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/06 20:32:18 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/06 23:00:49 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ public:
 	Point(const Point &);
 	Point(const float, const float);
 	Point(const int, const int);
+	float get_x(void) const ;
+	float get_y(void) const;
 	~Point();
 
 	Point &operator=(const Point &);

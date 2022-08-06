@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 20:36:55 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/04 23:33:59 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/06 13:26:51 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,11 @@ public:
 	Fixed operator--(int);
 
 	static Fixed&  min(Fixed&, Fixed&);
-	static const Fixed&  mix(const Fixed &, const Fixed &);
+	static const Fixed&  min(const Fixed &, const Fixed &);
 	static Fixed&  max(Fixed &, Fixed &);
 	static const Fixed&  max(const Fixed &, const Fixed &);
+
+	int getRawBits(void) const;
 
 private:
 	int _val;

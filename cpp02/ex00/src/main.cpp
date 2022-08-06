@@ -6,18 +6,17 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 20:36:56 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/04 15:54:27 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/03 19:55:12 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Fixed.hpp>
-#include <iostream>
 
 int main(void)
 {
 	Fixed a;
 	Fixed b(a);
-	Fixed c;
+	Fi ed c; 
 	
 	c = b;
 	std::cout << a.getRawBits() << std::endl;

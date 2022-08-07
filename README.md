@@ -8,3 +8,5 @@ Memory allocation, pointers to members, references, switch statement
 Ad-hoc polymorphism, operator overloading and Orthodox Canonical class form
 ### C++ Module03
 Inheritance
+### C++ Module04
+Subtype polymorphism, abstract classes, interfaces

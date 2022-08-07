@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 12:25:15 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/07 20:11:47 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/07 18:17:16 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ public:
 
 	void attack(const std::string &target);
 	void guardGate(void);
+private:
+	std::string _name;
+	int _hp;
+	int _ep;
+	int _atk;
 };
 
 #endif // SCAVTRAP_HPP

@@ -6,26 +6,20 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 12:25:06 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/07 20:11:27 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/07 18:18:42 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ScavTrap.hpp>
 
-ScavTrap::ScavTrap() : ClapTrap()
+ScavTrap::ScavTrap() : _name(""), _hp(100), _ep(50), _atk(20)
 {
-	_hp = 100;
-	_ep = 50;
-	_atk = 20;
-	std::cout << "ScavTrap Default constructor called" << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap(std::string name) : _name(name), _hp(100), _ep(50), _atk(20)
 {
-	_hp = 100;
-	_ep = 50;
-	_atk = 20;
-	std::cout << "ScavTrap Default constructor called" << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& cp)
@@ -35,7 +29,7 @@ ScavTrap::ScavTrap(const ScavTrap& cp)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap Destructor called" << std::endl;
+	std::cout << "destructor called" << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap&cp)

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 10:51:56 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/07 20:11:40 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/07 20:10:31 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ public:
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	void pause_action(void);
-	void die(void);
 
 protected:
 	std::string _name;

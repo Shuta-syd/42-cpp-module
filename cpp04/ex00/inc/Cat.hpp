@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/31 18:20:06 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/08 16:51:02 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/08 10:45:47 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/08 10:50:17 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#if !defined(CAT_HPP)
+#define CAT_HPP
 
-Zombie *zombieHorde(int N, std::string name)
+#include <Animal.hpp>
+
+class Cat : public Animal
 {
-	Zombie *zombies = new Zombie[N];
+public:
+	Cat();
+	Cat(std::string);
+	Cat(const Cat &);
+	~Cat();
 
-	if (zombies == NULL)
-	{
-		std::cerr << "[error]: could not new Zombie class instance" << std::endl;
-		return (NULL);
-	}
-	for (int i = 0; i < N; i++)
-		zombies[i].set_name(name);
-	return (zombies);
-}
+	Cat &operator=(const Cat &);
+};
+
+
+#endif // CAT_HPP

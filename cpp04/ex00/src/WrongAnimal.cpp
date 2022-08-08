@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/31 18:20:06 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/08 16:51:02 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/08 11:50:16 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/08 11:50:28 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#include <WrongAnimal.hpp>
 
-Zombie *zombieHorde(int N, std::string name)
+WrongAnimal::WrongAnimal()
 {
-	Zombie *zombies = new Zombie[N];
+}
 
-	if (zombies == NULL)
-	{
-		std::cerr << "[error]: could not new Zombie class instance" << std::endl;
-		return (NULL);
-	}
-	for (int i = 0; i < N; i++)
-		zombies[i].set_name(name);
-	return (zombies);
+WrongAnimal::~WrongAnimal()
+{
 }

@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/31 18:20:06 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/08 16:51:02 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/07 10:51:24 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/08 11:52:09 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#include <Animal.hpp>
+#include <Dog.hpp>
+#include <Cat.hpp>
 
-Zombie *zombieHorde(int N, std::string name)
+int main()
 {
-	Zombie *zombies = new Zombie[N];
-
-	if (zombies == NULL)
-	{
-		std::cerr << "[error]: could not new Zombie class instance" << std::endl;
-		return (NULL);
-	}
-	for (int i = 0; i < N; i++)
-		zombies[i].set_name(name);
-	return (zombies);
+	const Animal *meta = new Animal();
+	const Animal *j = new Dog();
+	const Animal *i = new Cat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); // will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
+	return 0;
 }

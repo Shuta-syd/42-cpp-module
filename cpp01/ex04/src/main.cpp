@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 03:24:43 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/02 14:58:03 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/09 14:09:31 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main(int argc, char const *argv[])
 		std::cerr << "[Usage]:./replace filename before after" << std::endl;
 		return 1;
 	}
+	
 	std::string filename(argv[1]);
 	std::ifstream file_in(filename);
 	std::ofstream file_out(filename + ".replace");

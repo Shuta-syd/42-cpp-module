@@ -6,23 +6,21 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 23:42:21 by shogura           #+#    #+#              #
-#    Updated: 2022/08/12 01:09:47 by shogura          ###   ########.fr        #
+#    Updated: 2022/08/02 20:34:00 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombieee
+NAME = ex00
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MP -MMD
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCDIR = src
 SRCS = $(shell find $(SRCDIR) -name "*.cpp" -type f)
 
 OBJDIR = obj
 OBJS = $(subst $(SRCDIR), ./$(OBJDIR), $(SRCS:%.cpp=%.o))
-
-DEPS    =    $(SRCS:%.cpp=%.d)
 
 INC = inc
 
@@ -51,8 +49,6 @@ clean:
 fclean:clean
 
 re: fclean all
-
--include $(DEPS)
 
 .PHONY: all clean fclean re
 

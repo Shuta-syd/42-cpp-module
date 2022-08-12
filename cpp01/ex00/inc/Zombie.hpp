@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 17:05:58 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/31 18:46:34 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/10 20:48:42 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,41 +22,10 @@ public:
 	Zombie(std::string);
 	~Zombie();
 	void announce(void) const ;
-	void set_name(std::string);
 
 private:
 	std::string _name;
 
-};
-
-#endif
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/31 17:05:58 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/31 18:25:39 by shogura          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
-
-#include <iostream>
-#include <string>
-class Zombie
-{
-public:
-	Zombie(std::string name);
-	~Zombie();
-	void announce(void);
-
-private:
-	std::string _name;
 };
 
 #endif

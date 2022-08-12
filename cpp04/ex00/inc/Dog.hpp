@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/31 17:52:38 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/10 20:48:07 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/08 10:46:39 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/08 10:50:30 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#if !defined(DOG_HPP)
+#define DOG_HPP
 
-Zombie::Zombie(std::string name) : _name(name)
-{
-	std::cout << _name << " created" << std::endl;
-}
+#include <Animal.hpp>
 
-Zombie::~Zombie()
+class Dog : public Animal
 {
-	std::cout << _name << " destroyed" << std::endl;
-}
+public:
+	Dog();
+	Dog(std::string);
+	Dog(const Dog &);
+	~Dog();
 
-void Zombie::announce(void) const 
-{
-	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+	Dog &operator=(const Dog &);
+};
+
+#endif // DOG_HPP

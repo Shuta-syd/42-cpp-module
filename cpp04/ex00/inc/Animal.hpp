@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/31 17:52:38 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/10 20:48:07 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/08 10:19:13 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/08 12:57:21 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#if !defined(ANIMAL_HPP)
+#define ANIMAL_HPP
 
-Zombie::Zombie(std::string name) : _name(name)
-{
-	std::cout << _name << " created" << std::endl;
-}
+#include <string>
+#include <iostream>
 
-Zombie::~Zombie()
+class Animal
 {
-	std::cout << _name << " destroyed" << std::endl;
-}
+public:
+	Animal();
+	Animal(std::string);
+	Animal(const Animal &);
+	~Animal();
 
-void Zombie::announce(void) const 
-{
-	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+	Animal &operator=(const Animal &);
+
+	virtual void makeSound(void) const ;
+	std::string getType(void) const ;
+
+protected:
+	std::string _type;
+};
+
+#endif // ANIMAL_HPP

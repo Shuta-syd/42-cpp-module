@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/31 17:52:38 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/10 20:48:07 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/08 10:45:47 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/08 10:50:17 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#if !defined(CAT_HPP)
+#define CAT_HPP
 
-Zombie::Zombie(std::string name) : _name(name)
-{
-	std::cout << _name << " created" << std::endl;
-}
+#include <Animal.hpp>
 
-Zombie::~Zombie()
+class Cat : public Animal
 {
-	std::cout << _name << " destroyed" << std::endl;
-}
+public:
+	Cat();
+	Cat(std::string);
+	Cat(const Cat &);
+	~Cat();
 
-void Zombie::announce(void) const 
-{
-	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+	Cat &operator=(const Cat &);
+};
+
+
+#endif // CAT_HPP

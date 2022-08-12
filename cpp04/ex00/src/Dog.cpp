@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 10:48:48 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/08 12:59:11 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/09 15:03:42 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,10 @@ Dog &Dog::operator=(const Dog &cp)
 
 void Dog::makeSound(void)
 {
-	
+
 }
+
+/*
+0100 0001
+
+*/

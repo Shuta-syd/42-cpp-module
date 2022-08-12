@@ -6,19 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 17:52:38 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/31 18:46:59 by shogura          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/31 17:06:00 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/31 17:50:20 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/10 20:48:07 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +22,7 @@ Zombie::~Zombie()
 	std::cout << _name << " destroyed" << std::endl;
 }
 
-void Zombie::announce(void)
+void Zombie::announce(void) const 
 {
 	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

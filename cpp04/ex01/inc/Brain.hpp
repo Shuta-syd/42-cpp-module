@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/08 10:45:47 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/18 20:18:35 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/18 20:06:51 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/18 20:09:45 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined(CAT_HPP)
-#define CAT_HPP
+#if !defined(BRAIN_HPP)
+#define BRAIN_HPP
 
-#include <Animal.hpp>
+#include <string>
+#include <iostream>
 
-class Cat : public Animal
+class Brain
 {
 public:
-	Cat();
-	Cat(std::string);
-	Cat(const Cat &);
-	~Cat();
+	Brain();
+	Brain(const Brain&);
+	~Brain();
 
-	Cat &operator=(const Cat &);
+	Brain &operator=(const Brain &);
+
+private:
+	std::string ideas[100];
 };
 
-#endif // CAT_HPP
+#endif // BRAIN_HPP

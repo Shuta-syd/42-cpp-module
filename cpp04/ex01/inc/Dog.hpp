@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/08 10:45:47 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/18 20:18:35 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/08 10:46:39 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/18 19:41:55 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined(CAT_HPP)
-#define CAT_HPP
+#if !defined(DOG_HPP)
+#define DOG_HPP
 
 #include <Animal.hpp>
 
-class Cat : public Animal
+class Dog : public Animal
 {
 public:
-	Cat();
-	Cat(std::string);
-	Cat(const Cat &);
-	~Cat();
+	Dog();
+	Dog(std::string);
+	Dog(const Dog &);
+	~Dog();
 
-	Cat &operator=(const Cat &);
+	Dog &operator=(const Dog &);
 };
 
-#endif // CAT_HPP
+#endif // DOG_HPP

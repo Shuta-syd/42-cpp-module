@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/08 10:45:47 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/18 20:18:35 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/07 10:51:24 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/18 20:17:39 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined(CAT_HPP)
-#define CAT_HPP
-
 #include <Animal.hpp>
+#include <Dog.hpp>
+#include <Cat.hpp>
+#include <WrongAnimal.hpp>
+#include <WrongCat.hpp>
+#include <Brain.hpp>
 
-class Cat : public Animal
+
+int main()
 {
-public:
-	Cat();
-	Cat(std::string);
-	Cat(const Cat &);
-	~Cat();
-
-	Cat &operator=(const Cat &);
-};
-
-#endif // CAT_HPP
+	const Animal *j = new Dog();
+	const Animal *i = new Cat();
+	delete j; // should not create a leak
+	delete i;
+	return 0;
+}

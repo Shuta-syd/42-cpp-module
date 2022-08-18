@@ -6,17 +6,20 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 10:51:24 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/18 20:17:39 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/18 20:42:01 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Animal.hpp>
 #include <Dog.hpp>
 #include <Cat.hpp>
-#include <WrongAnimal.hpp>
-#include <WrongCat.hpp>
 #include <Brain.hpp>
 
+__attribute__((destructor))
+static void destructor(void)
+{
+	system("leaks -q ex01");
+}
 
 int main()
 {

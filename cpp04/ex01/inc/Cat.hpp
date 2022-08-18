@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 10:45:47 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/18 19:41:52 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/18 20:32:51 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CAT_HPP
 
 #include <Animal.hpp>
+#include <Brain.hpp>
 
 class Cat : public Animal
 {
@@ -24,6 +25,9 @@ public:
 	~Cat();
 
 	Cat &operator=(const Cat &);
+
+private:
+	Brain *brain_;
 };
 
 #endif // CAT_HPP

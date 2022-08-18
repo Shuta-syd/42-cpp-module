@@ -6,22 +6,20 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 10:49:11 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/18 19:57:54 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/18 20:49:14 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Cat.hpp>
 
-Cat::Cat()
+Cat::Cat() : Animal("Cat"), brain_(new Brain())
 {
-	this->type_ = "Cat";
 	std::cout << "[Cat] Default Constructor is called" << std::endl;
 }
 
-Cat::Cat(std::string type) : Animal(type)
+Cat::Cat(std::string type) : Animal(type), brain_(new Brain())
 {
-	type_ = type;
-	std::cout << "[Cat] Default Constructor is called" << std::endl;
+	std::cout << "[Cat] Constructor is called" << std::endl;
 }
 
 Cat::Cat(const Cat &cp)
@@ -32,6 +30,7 @@ Cat::Cat(const Cat &cp)
 
 Cat::~Cat()
 {
+	delete brain_;
 	std::cout << "[Cat] Destructor is called" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 10:46:39 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/18 19:41:55 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/18 20:32:57 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define DOG_HPP
 
 #include <Animal.hpp>
+#include <Brain.hpp>
 
 class Dog : public Animal
 {
@@ -24,6 +25,9 @@ public:
 	~Dog();
 
 	Dog &operator=(const Dog &);
+
+private:
+	Brain *brain_;
 };
 
 #endif // DOG_HPP

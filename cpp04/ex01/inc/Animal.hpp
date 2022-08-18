@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 10:19:13 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/18 19:48:36 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/18 21:09:05 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 	Animal();
 	Animal(std::string);
 	Animal(const Animal &);
-	~Animal();
+	virtual ~Animal();
 
 	Animal &operator=(const Animal &);
 

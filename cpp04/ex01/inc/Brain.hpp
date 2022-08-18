@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 20:06:51 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/18 20:09:45 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/18 20:50:10 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 	Brain &operator=(const Brain &);
 
 private:
-	std::string ideas[100];
+	std::string ideas_[100];
 };
 
 #endif // BRAIN_HPP

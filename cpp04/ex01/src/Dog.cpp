@@ -6,22 +6,20 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 10:48:48 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/18 19:58:58 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/18 20:48:11 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Dog.hpp>
 
-Dog::Dog()
+Dog::Dog() : Animal("Dog"), brain_(new Brain)
 {
-	type_ = "Dog";
 	std::cout << "[Dog] Default Constructor is called" << std::endl;
 }
 
-Dog::Dog(std::string type) : Animal(type)
+Dog::Dog(std::string type) : Animal(type), brain_(new Brain())
 {
-	type_ = type;
-	std::cout << "[Dog] Default Constructor is called" << std::endl;
+	std::cout << "[Dog] Constructor is called" << std::endl;
 }
 
 Dog::Dog(const Dog &cp)
@@ -32,6 +30,7 @@ Dog::Dog(const Dog &cp)
 
 Dog::~Dog()
 {
+	delete brain_;
 	std::cout << "[Dog] Destructor is called" << std::endl;
 }
 

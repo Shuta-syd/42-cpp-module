@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 10:49:11 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/18 20:49:14 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/18 21:26:51 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,9 @@ Cat &Cat::operator=(const Cat &cp)
 {
 	(void)cp;
 	return *this;
+}
+
+void Cat::makeSound(void) const
+{
+	std::cout << "[Cat] making some noise .............." << std::endl;
 }

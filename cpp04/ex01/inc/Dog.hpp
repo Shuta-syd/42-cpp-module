@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 10:46:39 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/18 20:32:57 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/18 21:17:52 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ public:
 	~Dog();
 
 	Dog &operator=(const Dog &);
+
+	void makeSound(void) const;
 
 private:
 	Brain *brain_;

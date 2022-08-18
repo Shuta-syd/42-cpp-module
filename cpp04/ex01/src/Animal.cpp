@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 10:19:16 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/18 19:48:24 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/18 21:26:35 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Animal &Animal::operator=(const Animal &cp)
 
 void Animal::makeSound(void) const
 {
-	std::cout << type_ <<  " making some noise .............." << std::endl;
+	std::cout << "[Animal] making some noise .............." << std::endl;
 }
 
 std::string Animal::getType(void) const

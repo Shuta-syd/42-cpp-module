@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 10:45:47 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/18 20:32:51 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/18 21:27:03 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ public:
 	~Cat();
 
 	Cat &operator=(const Cat &);
+
+	void makeSound(void) const;
 
 private:
 	Brain *brain_;

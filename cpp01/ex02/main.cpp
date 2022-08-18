@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 19:06:06 by shogura           #+#    #+#             */
-/*   Updated: 2022/07/31 19:23:02 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/18 14:46:19 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ int main(void)
 	std::cout << str << std::endl
 			  << *stringPTR << std::endl
 			  << stringREF << std::endl;
+
+	std::cout << &str << std::endl
+			  << stringPTR << std::endl
+			  << &stringREF << std::endl;
 
 	str = "hi men I'm good";
 	std::cout << str << std::endl

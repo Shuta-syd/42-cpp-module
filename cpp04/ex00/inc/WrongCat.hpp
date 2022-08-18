@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/08 10:45:47 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/18 19:41:52 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/18 19:53:26 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/18 19:58:36 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined(CAT_HPP)
-#define CAT_HPP
+#if !defined(WRONGCAT_HPP)
+#define WRONGCAT_HPP
 
-#include <Animal.hpp>
+#include <WrongAnimal.hpp>
 
-class Cat : public Animal
+class WrongCat : public WrongAnimal
 {
 public:
-	Cat();
-	Cat(std::string);
-	Cat(const Cat &);
-	~Cat();
+	WrongCat();
+	WrongCat(const WrongCat&);
+	WrongCat(std::string);
+	~WrongCat();
 
-	Cat &operator=(const Cat &);
+	WrongCat &operator=(const WrongCat&);
 };
 
-#endif // CAT_HPP
+#endif // WRONGCAT_HPP

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 10:48:48 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/09 15:03:42 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/18 19:58:58 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 Dog::Dog()
 {
-	_type = "Dog";
+	type_ = "Dog";
 	std::cout << "[Dog] Default Constructor is called" << std::endl;
 }
 
 Dog::Dog(std::string type) : Animal(type)
 {
-	_type = type;
+	type_ = type;
 	std::cout << "[Dog] Default Constructor is called" << std::endl;
 }
 
@@ -40,13 +40,3 @@ Dog &Dog::operator=(const Dog &cp)
 	(void)cp;
 	return *this;
 }
-
-void Dog::makeSound(void)
-{
-
-}
-
-/*
-0100 0001
-
-*/

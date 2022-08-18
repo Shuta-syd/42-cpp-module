@@ -6,7 +6,7 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 23:42:21 by shogura           #+#    #+#              #
-#    Updated: 2022/08/01 03:05:21 by shogura          ###   ########.fr        #
+#    Updated: 2022/08/18 15:08:01 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = violence
 
 CXX = c++
 
-CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MP -MMD
 
 SRCDIR = src
 SRCS = $(shell find $(SRCDIR) -name "*.cpp" -type f)

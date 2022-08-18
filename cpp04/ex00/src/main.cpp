@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/31 17:05:58 by shogura           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/08/18 14:45:06 by shogura          ###   ########.fr       */
-=======
-/*   Updated: 2022/08/10 20:48:42 by shogura          ###   ########.fr       */
->>>>>>> 8a4efe257570a555d7df3c3cf8e800686bd30a6f
+/*   Created: 2022/08/07 10:51:24 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/08 11:52:09 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#include <Animal.hpp>
+#include <Dog.hpp>
+#include <Cat.hpp>
 
-#include <iostream>
-#include <string>
-class Zombie
+int main()
 {
-public:
-	Zombie();
-	Zombie(std::string);
-	~Zombie();
-	void announce(void) const ;
-
-private:
-	std::string _name;
-
-};
-
-#endif
+	const Animal *meta = new Animal();
+	const Animal *j = new Dog();
+	const Animal *i = new Cat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); // will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
+	return 0;
+}

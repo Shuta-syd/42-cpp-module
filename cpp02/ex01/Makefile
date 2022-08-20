@@ -6,7 +6,7 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 23:42:21 by shogura           #+#    #+#              #
-#    Updated: 2022/08/04 21:41:47 by shogura          ###   ########.fr        #
+#    Updated: 2022/08/20 20:47:39 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,15 @@ NAME = ex01
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MP -MMD
 
 SRCDIR = src
 SRCS = $(shell find $(SRCDIR) -name "*.cpp" -type f)
 
 OBJDIR = obj
 OBJS = $(subst $(SRCDIR), ./$(OBJDIR), $(SRCS:%.cpp=%.o))
+
+DEPS    =    $(SRCS:%.cpp=%.d)
 
 INC = inc
 
@@ -34,7 +36,7 @@ $(OBJDIR)/%.o:$(SRCDIR)/%.cpp
 	@echo "$< =========> $(GRN) $@ $(RES)"
 
 $(NAME):$(OBJS)
-	@$(CXX) -o $(NAME) $(OBJS)
+	@$(CXX) $(CXXFLAGS) -I$(INC) -o $(NAME) $(OBJS)
 	@echo "$(CYN)\n=====link=====$(RES)"
 	@echo "$(YEL)Objects$(RES): $(OBJS)\n"
 	@echo "$(YEL)Flags$(RES): $(CXXFLAGS)\n"
@@ -51,6 +53,8 @@ fclean:clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
+-include $(DEPS)
 
 RED = \033[31m
 GRN = \033[32m

@@ -26,8 +26,8 @@ public:
 	void setRawBits(int const raw);
 
 private:
-	int _val;
-	static const int _bits;
+	int val_;
+	static const int _bits_;
 };
 
 #endif

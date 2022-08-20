@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 10:19:13 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/18 21:17:27 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/20 21:42:23 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@
 
 class Animal
 {
+
 public:
-	Animal();
-	Animal(std::string);
 	Animal(const Animal &);
 	virtual ~Animal();
 
@@ -30,6 +29,8 @@ public:
 	std::string getType(void) const;
 
 protected:
+	Animal();
+	Animal(std::string);
 	std::string type_;
 };
 

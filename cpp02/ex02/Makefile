@@ -6,7 +6,7 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 23:42:21 by shogura           #+#    #+#              #
-#    Updated: 2022/08/06 12:57:35 by shogura          ###   ########.fr        #
+#    Updated: 2022/08/20 20:54:58 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = ex02
 
 CXX = c++
 
-CXXFLAGS = -MMD -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MP -MMD
 
 SRCDIR = src
 SRCS = $(shell find $(SRCDIR) -name "*.cpp" -type f)
@@ -22,7 +22,7 @@ SRCS = $(shell find $(SRCDIR) -name "*.cpp" -type f)
 OBJDIR = obj
 OBJS = $(subst $(SRCDIR), ./$(OBJDIR), $(SRCS:%.cpp=%.o))
 
-DEPS = $(SRCS:%.cpp=%.d)
+DEPS    =    $(SRCS:%.cpp=%.d)
 
 INC = inc
 
@@ -36,7 +36,7 @@ $(OBJDIR)/%.o:$(SRCDIR)/%.cpp
 	@echo "$< =========> $(GRN) $@ $(RES)"
 
 $(NAME):$(OBJS)
-	@$(CXX) -o $(NAME) $(OBJS)
+	@$(CXX) $(CXXFLAGS) -I$(INC) -o $(NAME) $(OBJS)
 	@echo "$(CYN)\n=====link=====$(RES)"
 	@echo "$(YEL)Objects$(RES): $(OBJS)\n"
 	@echo "$(YEL)Flags$(RES): $(CXXFLAGS)\n"

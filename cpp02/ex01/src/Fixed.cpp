@@ -6,20 +6,20 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 20:36:55 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/04 21:33:17 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/20 20:51:48 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Fixed.hpp>
 
-const int Fixed::_bits = 8;
+const int Fixed::bits_ = 8;
 
-Fixed::Fixed(void) : _val(0)
+Fixed::Fixed(void) : val_(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &cp) : _val(cp._val)
+Fixed::Fixed(const Fixed &cp) : val_(cp.val_)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = cp;
@@ -28,13 +28,13 @@ Fixed::Fixed(const Fixed &cp) : _val(cp._val)
 Fixed::Fixed(int val)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->_val = val << _bits;
+	this->val_ = val << bits_;
 }
 
 Fixed::Fixed(float val)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->_val = roundf(val * (1 << _bits));
+	this->val_ = roundf(val * (1 << bits_));
 }
 
 Fixed::~Fixed(){
@@ -44,7 +44,7 @@ Fixed::~Fixed(){
 Fixed& Fixed::operator=(const Fixed &cp)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->_val = cp.getRawBits();
+	this->val_ = cp.getRawBits();
 	return *this;
 }
 
@@ -57,20 +57,20 @@ std::ostream &operator<<(std::ostream& stream, const Fixed& fixed_class)
 
 int Fixed::getRawBits(void) const
 {
-	return this->_val;
+	return this->val_;
 }
 
 void Fixed::setRawBits(int const raw)
 {
-	this->_val = raw;
+	this->val_ = raw;
 }
 
 float Fixed::toFloat(void) const
 {
-	return (float)_val / (1 << _bits);
+	return (float)val_ / (1 << bits_);
 }
 
 int Fixed::toInt(void) const
 {
-	return (int)_val / (1 << _bits);
+	return (int)val_ / (1 << bits_);
 }

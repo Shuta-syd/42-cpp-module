@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 20:36:55 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/04 20:37:42 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/20 20:51:31 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ public:
 	int toInt(void) const;
 
 private:
-	int _val;
-	static const int _bits;
+	int val_;
+	static const int bits_;
 };
 
 std::ostream &operator<<(std::ostream &, const Fixed &);

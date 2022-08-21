@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:19:35 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/21 14:40:14 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/21 22:25:11 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@ AMateria::AMateria()
 	std::cout << "[AMateria] Default Constructor called" << std::endl;
 }
 
-AMateria::AMateria(std::string const &type)
+AMateria::AMateria(std::string const &type) : type_(type)
 {
-	this->type_ = type;
-	std::cout << "[AMateria] Constructor called" << std::endl;
+	std::cout << "[AMateria] Param Constructor called" << std::endl;
 }
 
 AMateria::AMateria(const AMateria &other)
@@ -44,7 +43,8 @@ std::string const &AMateria::getType() const {
 	return this->type_;
 }
 
-void AMateria::use(ICaracter &target)
+void AMateria::use(ICharacter &target)
 {
-	
+	(void)target;
+	std::cout << "Nothing there" << std::endl;
 }

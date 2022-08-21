@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 21:26:19 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/21 23:24:00 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/21 23:42:47 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,17 @@ void Character::equip(AMateria *m)
 			return;
 		}
 	std::cout << "Inventory is full, Materia is equipped" << std::endl;
+}
+
+void Character::unequip(int idx)
+{
+	if (idx < 0 || idx > 4)
+		std::cout << "Invalid Index" << std::end;
+	else if (inventory_[idx] != 0)
+	{
+		inventory_[idx] = 0;
+		std::cout << "Materia in this index is unset" << std::endl;
+	}
+	else
+		std::cout << "There's Materia in this index" << std::endl;
 }

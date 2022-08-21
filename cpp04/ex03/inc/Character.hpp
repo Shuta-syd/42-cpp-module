@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 21:26:25 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/21 23:07:57 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/21 23:28:01 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 
 	std::string const &getName() const;
 	void equip(AMateria *);
-	void unequip(AMateria *);
+	void unequip(int);
 	void use(int, ICharacter &);
 
 private:

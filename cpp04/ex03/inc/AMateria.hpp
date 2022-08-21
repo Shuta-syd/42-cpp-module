@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 21:55:01 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/21 14:10:20 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/21 14:40:26 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define AMATERIA_HPP
 
 #include <string>
+#include <iostream>
+#include <ICharacter.hpp>
 
 class AMateria
 {

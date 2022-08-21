@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   Cure.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/20 22:21:16 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/20 22:23:06 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/20 22:20:00 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/21 14:59:14 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined(CURE_HPP)
-#define CURE_HPP
+#if !defined(Cure_HPP)
+#define Cure_HPP
 
-class Cure
+#include <AMateria.hpp>
+#include <string>
+#include <iostream>
+
+class Cure : public AMateria
 {
 private:
 
 public:
 	Cure();
+	Cure(const Cure&);
 	~Cure();
 
-	Cure *clone(const Cure &);
+	Cure &operator=(const Cure &);
+
+	AMateria *clone(void) const;
+	void use(ICharacter &);
 };
 
-#endif // CURE_HPP
+#endif // Cure_HPP

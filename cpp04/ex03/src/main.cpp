@@ -5,35 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/07 10:51:24 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/20 21:50:55 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/20 22:23:39 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/20 22:23:51 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Animal.hpp>
-#include <Dog.hpp>
-#include <Cat.hpp>
-#include <Brain.hpp>
-
-// __attribute__((destructor))
-// static void destructor(void)
-// {
-// 	system("leaks -q ex01");
-// }
+#include <AMateria.hpp>
 
 int main()
 {
-	//Animalクラス単体の場合はコンパイルエラー出す
-	// const Animal *animal = new Animal();
-	const Animal *j = new Dog();
-	const Animal *i = new Cat();
-	delete j;
-	delete i;
-	// delete animal;
-
-	Dog *test = new Dog();
-	test->makeSound();
-	test->Animal::makeSound();
-	delete test;
+	IMateriaSource *src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter *me = new Character("me");
+	AMateria *tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	ICharacter *bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
+	delete bob;
+	delete me;
+	delete src;
 	return 0;
 }

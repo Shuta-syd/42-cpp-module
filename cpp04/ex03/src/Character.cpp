@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 21:26:19 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/22 14:31:33 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/22 14:54:09 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Character::Character(const Character &other)
 	for (size_t i = 0; i < 4; i++)
 		if (inventory_[i] != 0)
 			delete inventory_[i];
-	std::cout << "[Character] Copy Constructor called" << std::end;
+	std::cout << "[Character] Copy Constructor called" << std::endl;
 	*this = other;
 }
 
@@ -40,7 +40,7 @@ Character::~Character()
 	for (size_t i = 0; i < 4; i++)
 		if (inventory_[i] != 0)
 			delete inventory_[i];
-	std::cout << "[Character] Destructor called"
+	std::cout << "[Character] Destructor called" << std::endl;
 }
 
 Character &Character::operator=(const Character &other)
@@ -48,16 +48,17 @@ Character &Character::operator=(const Character &other)
 	this->type_ = other.getName();
 	for (size_t i = 0; i < 4; i++)
 	{
+		delete this->inventory_[i];
 		if (other.inventory_[i])
 			this->inventory_[i] = other.inventory_[i];
 		else
-			this->inventory[i] = 0;
+			this->inventory_[i] = 0;
 	}
 
 	return *this;
 }
 
-std::string const &Character::getName()
+std::string const &Character::getName() const
 {
 	return type_;
 }
@@ -77,7 +78,7 @@ void Character::equip(AMateria *m)
 void Character::unequip(int idx)
 {
 	if (idx < 0 || idx > 4)
-		std::cout << "Invalid Index" << std::end;
+		std::cout << "Invalid Index" << std::endl;
 	else if (inventory_[idx] != 0)
 	{
 		inventory_[idx] = 0;
@@ -90,7 +91,7 @@ void Character::unequip(int idx)
 void Character::use(int idx, ICharacter &target)
 {
 	if (idx < 0 || idx > 4)
-		std::cout << "Invalid Index" << std::end;
+		std::cout << "Invalid Index" << std::endl;
 	else if (inventory_[idx] != 0)
 		inventory_[idx]->use(target);
 	else

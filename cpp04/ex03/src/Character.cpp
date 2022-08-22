@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 21:26:19 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/21 23:42:47 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/22 14:31:33 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,4 +85,14 @@ void Character::unequip(int idx)
 	}
 	else
 		std::cout << "There's Materia in this index" << std::endl;
+}
+
+void Character::use(int idx, ICharacter &target)
+{
+	if (idx < 0 || idx > 4)
+		std::cout << "Invalid Index" << std::end;
+	else if (inventory_[idx] != 0)
+		inventory_[idx]->use(target);
+	else
+		std::cout << "There isn't Materia in this index" << std::endl;
 }

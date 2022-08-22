@@ -6,15 +6,15 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 13:26:57 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/21 21:22:39 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/22 16:29:06 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #if !defined(ICHARACTER_HPP)
 #define ICHARACTER_HPP
 
-#include <string>
 #include <AMateria.hpp>
+class AMateria;
 
 class ICharacter
 {

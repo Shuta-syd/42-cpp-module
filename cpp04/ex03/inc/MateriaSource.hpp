@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 22:07:32 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/22 14:51:48 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/22 16:37:58 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <IMateriaSource.hpp>
 #include <iostream>
 
-class MateriaSource
+class MateriaSource : public IMateriaSource
 {
 public:
 	MateriaSource();

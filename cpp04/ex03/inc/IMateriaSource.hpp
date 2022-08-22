@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 22:05:37 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/22 14:39:01 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/22 16:24:37 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 #include <AMateria.hpp>
 #include <string>
 
-class IMateriaSourse
+class IMateriaSource
 {
 public:
-	virtual ~IMateriaSourse(){};
+	virtual ~IMateriaSource(){};
 	virtual void learnMateria(AMateria *) = 0;
 	virtual AMateria *createMateria(std::string const &type) = 0;
 };

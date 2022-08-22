@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 21:26:19 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/22 14:54:09 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/22 16:30:07 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ std::string const &Character::getName() const
 void Character::equip(AMateria *m)
 {
 	for (size_t i = 0; i < 4; i++)
-		if (inventory_[i] = 0)
+		if (inventory_[i] == 0)
 		{
 			inventory_[i] = m;
 			std::cout << "Materia is equipped" << std::endl;

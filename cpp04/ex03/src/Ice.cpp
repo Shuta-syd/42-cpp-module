@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:19:59 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/21 22:32:48 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/22 16:35:30 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,5 @@ AMateria *Ice::clone(void) const {
 }
 
 void Ice::use(ICharacter &target){
-	std::cout << "* shoots an ice bolt at " << this->getType() << " *" << std::endl;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:19:35 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/21 22:25:11 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/22 17:29:40 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,5 @@ std::string const &AMateria::getType() const {
 
 void AMateria::use(ICharacter &target)
 {
-	(void)target;
-	std::cout << "Nothing there" << std::endl;
+	std::cout << "A materia used on " << target.getName() << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 22:07:23 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/22 16:19:59 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/22 16:33:55 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ MateriaSource::MateriaSource()
 MateriaSource::MateriaSource(const MateriaSource &other)
 {
 	std::cout << "[MateriaSource] Copy Constructor called" << std::endl;
-	for (size_t i = 0; i < 4; i++)
-		materia_[i] = 0;
+	*this = other;
 }
 
 MateriaSource::~MateriaSource(){

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 21:55:01 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/21 22:34:17 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/22 16:36:01 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include <ICharacter.hpp>
+class ICharacter;
 
 class AMateria
 {
@@ -23,7 +24,7 @@ public:
 	AMateria();
 	AMateria(std::string const &);
 	AMateria(const AMateria &);
-	~AMateria();
+	virtual ~AMateria();
 
 	AMateria &operator=(const AMateria &);
 

@@ -6,7 +6,7 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 23:42:21 by shogura           #+#    #+#              #
-#    Updated: 2022/08/21 19:47:10 by shogura          ###   ########.fr        #
+#    Updated: 2022/08/22 16:37:00 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRCS = $(shell find $(SRCDIR) -name "*.cpp" -type f)
 OBJDIR = obj
 OBJS = $(subst $(SRCDIR), ./$(OBJDIR), $(SRCS:%.cpp=%.o))
 
-DEPS    =    $(SRCS:%.cpp=%.d)
+DEPS = $(SRCS:%.cpp=%.d)
 
 INC = inc
 

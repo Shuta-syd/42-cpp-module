@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:19:59 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/21 22:33:58 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/22 17:31:22 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ AMateria *Cure::clone(void) const
 
 void Cure::use(ICharacter &target)
 {
-	std::cout << "* heals " << this->getType() << ">’s wounds *" << std::endl;
+	std::cout << "* heals " << target.getName() << "\'s wounds *" << std::endl;
 }

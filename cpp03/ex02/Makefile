@@ -6,7 +6,7 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 23:42:21 by shogura           #+#    #+#              #
-#    Updated: 2022/08/07 19:33:30 by shogura          ###   ########.fr        #
+#    Updated: 2022/08/23 17:15:33 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,16 @@ NAME = ex02
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MP -MMD -pedantic
 
 SRCDIR = src
 SRCS = $(shell find $(SRCDIR) -name "*.cpp" -type f)
 
 OBJDIR = obj
 OBJS = $(subst $(SRCDIR), ./$(OBJDIR), $(SRCS:%.cpp=%.o))
+
+DEPS    =    $(SRCS:%.cpp=%.d)
+
 
 INC = inc
 
@@ -51,6 +54,7 @@ fclean:clean
 re: fclean all
 
 .PHONY: all clean fclean re
+-include $(DEPS)
 
 RED = \033[31m
 GRN = \033[32m

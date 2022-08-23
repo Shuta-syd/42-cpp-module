@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 10:51:45 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/07 18:07:45 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/23 17:38:07 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 ClapTrap::ClapTrap() : _name(""), _hp(10), _ep(10), _atk(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "[ClapTrap] Default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _atk(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "[ClapTrap] Prams constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &cp)
 {
 	*this = cp;
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "[ClapTrap] Copy constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "destructor called" << std::endl;
+	std::cout << "[ClapTrap] Destructor called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &cp)

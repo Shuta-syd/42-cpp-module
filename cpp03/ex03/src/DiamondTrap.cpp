@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 20:14:59 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/07 22:27:07 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/23 17:45:38 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 DiamondTrap::DiamondTrap() : FragTrap()
 {
-	std::cout << "DiamondTrap Default constructor is called" << std::endl;
+	std::cout << "[DiamondTrap] Default constructor is called" << std::endl;
 	ClapTrap::_name += "_clap_name";
 	this->_hp = FragTrap::_hp;
 	this->_ep = ScavTrap::_hp;
@@ -23,24 +23,24 @@ DiamondTrap::DiamondTrap() : FragTrap()
 
 DiamondTrap::DiamondTrap(std::string name) : FragTrap(name)
 {
-	std::cout << "DiamondTrap Default constructor is called" << std::endl;
-	ClapTrap::_name += "_clap_name";
+	std::cout << "[DiamondTrap] Default constructor is called" << std::endl;
+	ClapTrap::_name =  name + "_clap_name";
 	this->_name = name;
 	this->_hp = FragTrap::_hp;
-	this->_ep = FragTrap::_hp;
+	this->_ep = SravTrap::_hp;
 	this->_atk = FragTrap::_hp;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &cp)
 {
 
-	std::cout << "DiamondTrap Copy constructor is called" << std::endl;
+	std::cout << "[DiamondTrap] Copy constructor is called" << std::endl;
 	*this = cp;
 }
 
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << "DiamondTrap Destructor is called" << std::endl;
+	std::cout << "[DiamondTrap] Destructor is called" << std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &cp)

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 20:36:55 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/06 13:26:51 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/23 15:42:20 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 	~Fixed();
 
 	float toFloat(void) const;
+	int toInt(void) const;
 
 	bool operator>(const Fixed &);
 	bool operator<(const Fixed &);
@@ -51,6 +52,7 @@ public:
 	static const Fixed&  max(const Fixed &, const Fixed &);
 
 	int getRawBits(void) const;
+	void setRawBits(int const raw);
 
 private:
 	int _val;

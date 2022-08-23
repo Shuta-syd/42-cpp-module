@@ -6,11 +6,12 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 10:51:24 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/07 20:12:26 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/23 17:35:29 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <FragTrap.hpp>
+#include <ScavTrap.hpp>
 
 int main(void)
 {

@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   replace_str.hpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/01 09:24:32 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/02 14:50:29 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/23 14:01:34 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/23 14:01:47 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REPLACE_STR_HPP
-#define REPLACE_STR_HPP
+#include <Bureaucrat.hpp>
 
-#include <string>
-#include <iostream>
-#include <fstream>
-
-class replace_str
+int main(void)
 {
-public:
-	replace_str(std::string, std::string);
-	replace_str();
-	~replace_str();
-	void replace(std::ifstream&, std::ofstream&);
-
-private:
-	std::string _before;
-	std::string _after;
-};
-#endif
+	
+	return 0;
+}

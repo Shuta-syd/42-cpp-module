@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   replace_str.cpp                                    :+:      :+:    :+:   */
+/*   ReplaceStr.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,21 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <replace_str.hpp>
+#include <ReplaceStr.hpp>
 
-replace_str::replace_str(std::string before, std::string after) :  _before(before), _after(after)
+ReplaceStr::ReplaceStr(std::string before, std::string after) :  _before(before), _after(after)
 {
 }
 
-replace_str::replace_str()
+ReplaceStr::ReplaceStr()
 {
 }
 
-replace_str::~replace_str()
+ReplaceStr::~ReplaceStr()
 {
 }
 
-void replace_str::replace(std::ifstream& r_file, std::ofstream& w_file)
+void ReplaceStr::replace(std::ifstream& r_file, std::ofstream& w_file)
 {
 	std::string line;
 	std::size_t index = 0;

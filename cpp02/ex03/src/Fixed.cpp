@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 20:36:55 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/07 00:21:02 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/23 15:41:47 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ Fixed Fixed::operator+(const Fixed &cp)
 {
 	Fixed ret;
 
-	ret._val = (this->_val + cp._val) / (1 << _bits);
+	ret._val = (this->_val + cp._val);
 	return ret;
 }
 
@@ -85,7 +85,7 @@ Fixed Fixed::operator-(const Fixed &cp)
 {
 	Fixed ret;
 
-	ret._val = (this->_val - cp._val) / (1 << _bits);
+	ret._val = (this->_val - cp._val);
 	return ret;
 }
 
@@ -93,13 +93,18 @@ Fixed Fixed::operator*(const Fixed &cp)
 {
 	Fixed ret;
 
-	ret._val = (this->_val * cp._val) / (1 << _bits);
+	ret._val = (this->_val * cp._val) / 2 * (1 << _bits);
 	return ret;
 }
 
 Fixed Fixed::operator/(const Fixed &cp)
 {
 	Fixed ret;
+
+	if (cp.val_ == 0)
+	{
+		std::errc << "[ERROR] division by zero" << std::endl;
+	}
 
 	ret._val = (this->_val / cp._val) / (1 << _bits);
 	return ret;
@@ -177,6 +182,11 @@ float Fixed::toFloat(void) const
 	return (float)_val / (1 << _bits);
 }
 
+int Fixed::toInt(void) const
+{
+	return (int)val_ / (1 << bits_);
+}
+
 int Fixed::getRawBits(void) const
 {
 	return this->_val;
@@ -184,5 +194,5 @@ int Fixed::getRawBits(void) const
 
 void Fixed::setRawBits(int const raw)
 {
-	this->_val = raw;
+	this->val_ = raw;
 }

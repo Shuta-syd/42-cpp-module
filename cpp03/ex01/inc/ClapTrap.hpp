@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 10:51:56 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/07 20:11:40 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/23 17:20:57 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,3 @@ protected:
 };
 
 #endif // ClapTrap_HPP
-
-/*
-https://gamedev.stackexchange.com/questions/114375/error-no-default-constructor-exists-for-sprite
-*/

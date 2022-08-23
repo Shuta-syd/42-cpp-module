@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 12:25:06 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/07 20:11:27 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/23 17:17:53 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ScavTrap::ScavTrap() : ClapTrap()
 	_hp = 100;
 	_ep = 50;
 	_atk = 20;
-	std::cout << "ScavTrap Default constructor called" << std::endl;
+	std::cout << "[ScavTrap] Default constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
@@ -25,7 +25,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	_hp = 100;
 	_ep = 50;
 	_atk = 20;
-	std::cout << "ScavTrap Default constructor called" << std::endl;
+	std::cout << "[ScavTrap] Default constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& cp)
@@ -35,7 +35,7 @@ ScavTrap::ScavTrap(const ScavTrap& cp)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap Destructor called" << std::endl;
+	std::cout << "[ScavTrap] Destructor called" << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap&cp)

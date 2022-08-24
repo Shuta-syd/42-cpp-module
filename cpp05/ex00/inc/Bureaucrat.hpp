@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 13:59:08 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/23 14:42:36 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/24 17:15:23 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@ public:
 
 	Bureaucrat &operator=(const Bureaucrat &);
 
-	void GradeTooHighException(void);
-	void GradeTooLowException(void);
-
 	void incrementGrade(void);
 	void decrementGrade(void);
 
@@ -36,6 +33,8 @@ public:
 	int getGrade(void) const;
 
 private:
+	void GradeTooHighException(const std::string);
+	void GradeTooLowException(const std::string);
 	const std::string name_;
 	int grade_;
 };

@@ -10,3 +10,5 @@ Ad-hoc polymorphism, operator overloading and Orthodox Canonical class form
 Inheritance
 ### C++ Module04
 Subtype polymorphism, abstract classes, interfaces
+### C++ Module05
+Repetition and Exceptions

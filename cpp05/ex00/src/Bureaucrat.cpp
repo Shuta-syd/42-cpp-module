@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 13:59:42 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/23 14:42:55 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/24 17:14:18 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 #define MAX_GRADE 1
 #define MIN_GRADE 150
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat() : name_("unknown"), grade_(MIN_GRADE)
 {
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name_(name), grade_(grade)
 {
+	if (grade > MIN_GRADE)
+		GradeTooLowException("[Exception] Grade is too low");
+	else if (grade < MAX_GRADE)
+		GradeTooHighException("[Exception] Grade is too low");
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other)
@@ -38,9 +42,11 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 	return *this;
 }
 
-std::ostream &operator<<(std::ostream &os, const Bureaucrat &instance)
+std::ostream &operator<<(std::ostream &stream, const Bureaucrat &instance)
 {
-	std::cout << instance.getName() << ", bureaucrat grade" << instance.getGrade() << "." << std::endl;
+	stream << instance.getName() << ", bureaucrat grade" << instance.getGrade() << ".";
+
+	return stream;
 }
 
 std::string Bureaucrat::getName(void) const
@@ -53,20 +59,30 @@ int Bureaucrat::getGrade(void) const
 	return this->grade_;
 }
 
-void Bureaucrat::GradeTooHighException(void)
+void Bureaucrat::GradeTooHighException(const std::string msg)
 {
-
+	throw std::out_of_range(msg);
 }
 
-void Bureaucrat::GradeTooLowException(void)
+void Bureaucrat::GradeTooLowException(const std::string msg)
 {
+	throw std::out_of_range(msg);
 }
 
 void Bureaucrat::incrementGrade(void)
 {
-
+	if (grade_ > MIN_GRADE)
+		GradeTooLowException("[Exception] Grade is too low");
+	else if (grade_ < MAX_GRADE)
+		GradeTooHighException("[Exception] Grade is too low");
+	grade_--;
 }
 
 void Bureaucrat::decrementGrade(void)
 {
+	if (grade_ > MIN_GRADE)
+		GradeTooLowException("[Exception] Grade is too low");
+	else if (grade_ < MAX_GRADE)
+		GradeTooHighException("[Exception] Grade is too low");
+	grade_++;
 }

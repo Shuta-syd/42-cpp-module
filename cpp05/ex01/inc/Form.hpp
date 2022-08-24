@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:20:01 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/24 18:08:00 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/24 18:56:57 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 #define MIN_GRADE 150
 #define EXCEPTION "[Exception] Grade is too low"
 
+class Bureaucrat;
+
 class Form
 {
 public:
@@ -28,6 +30,11 @@ public:
 	~Form();
 
 	Form &operator=(const Form &other);
+
+	std::string getName(void) const;
+	bool getIsSigned(void) const;
+	int getReqSign(void) const;
+	int getReqExe(void) const;
 
 	void beSigned(const Bureaucrat &);
 
@@ -40,5 +47,7 @@ private:
 	const int req_sign_;
 	const int req_exe_;
 };
+
+std::ostream &operator<<(std::ostream &, const Form &);
 
 #endif // FORM_HPP

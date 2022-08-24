@@ -6,55 +6,31 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 14:01:34 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/24 17:17:37 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/24 18:39:33 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Bureaucrat.hpp>
+#include <Form.hpp>
 
 int main(void)
 {
 
 	// normal pattern
-	try
 	{
-		Bureaucrat A("A", 100);
-		std::cout << A << std::endl;
-		std::cout << A.getGrade() << std::endl;
-		std::cout << A.getName() << std::endl;
-		A.incrementGrade();
-		std::cout << A << std::endl;
-		A.decrementGrade();
-		std::cout << A << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	// exception pattern
-	try
-	{
-		Bureaucrat B("B", 200);
-		std::cout << B << std::endl;
-		std::cout << B.getGrade() << std::endl;
-		std::cout << B.getName() << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	// exception pattern 2
-	try
-	{
-		Bureaucrat C("C", 0);
-		std::cout << C << std::endl;
-		std::cout << C.getGrade() << std::endl;
-		std::cout << C.getName() << std::endl;
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+		Form formA("formA", false, 100, 100);
+		Bureaucrat A("A", 50);
+		Bureaucrat B("B", 101);
 
+		std::cout << formA << std::endl;
+		std::cout << A << std::endl;
+		std::cout << B << std::endl;
+		A.signForm(formA);
+		std::cout << formA << std::endl;
+		std::cout << A << std::endl;
+		B.signForm(formA);
+		std::cout << formA << std::endl;
+		std::cout << B << std::endl;
+	}
 	return 0;
 }

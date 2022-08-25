@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 12:25:06 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/23 17:33:19 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/25 16:47:43 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,10 @@ void ScavTrap::attack(const std::string &target)
 
 void ScavTrap::guardGate(void)
 {
+	if (_hp <= 0)
+	{
+		std::cout << "ScavTrap " << _name << " is died" << std::endl;
+		return;
+	}
 	std::cout << "ScavTrap " << _name << " is now Gate keeper mode" << std::endl;
 }

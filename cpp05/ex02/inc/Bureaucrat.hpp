@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 13:59:08 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/25 14:54:37 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/25 17:16:16 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ public:
 	int getGrade(void) const;
 
 	void signForm(Form &) const ;
+	void executeForm(Form const &);
 
 private:
 	void GradeTooHighException(const std::string);

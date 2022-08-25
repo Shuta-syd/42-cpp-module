@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 14:01:34 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/25 16:44:46 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/25 17:18:47 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ int main(void)
 		std::cout << form << std::endl;
 		std::cout << bob << std::endl;
 		bob.signForm(form);
-		form.execute(bob);
-		std::cout << "> Incrementing " << bob.getName() << "'s grade" << std::endl;
+		bob.executeForm(form);
+		std::cout << "Incrementing " << bob.getName() << "'s grade" << std::endl;
 		bob.incrementGrade();
-		form.execute(bob);
+		bob.executeForm(form);
 	}
 	std::cout << "----------------------------------" << std::endl;
 	{
@@ -38,7 +38,7 @@ int main(void)
 		Bureaucrat jim("Jim", 30);
 
 		jim.signForm(form);
-		form.execute(jum)
+		jim.executeForm(form);
 	}
 	std::cout << "----------------------------------" << std::endl;
 	{

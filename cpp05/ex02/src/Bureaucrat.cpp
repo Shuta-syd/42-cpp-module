@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 13:59:42 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/24 18:05:34 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/25 17:18:18 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 
 std::ostream &operator<<(std::ostream &stream, const Bureaucrat &instance)
 {
-	stream << instance.getName() << ", bureaucrat grade" << instance.getGrade() << ".";
+	stream << instance.getName() << ", bureaucrat grade " << instance.getGrade() << ".";
 
 	return stream;
 }
@@ -85,4 +85,32 @@ void Bureaucrat::decrementGrade(void)
 	else if (grade_ < MAX_GRADE)
 		Bureaucrat::GradeTooHighException(EXCEPTION);
 	grade_++;
+}
+
+void Bureaucrat::signForm(Form &F) const
+{
+	try
+	{
+		F.beSigned(*this);
+		std::cout << this->getName() << " signed " << F.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->getName() << " couldn't sign " << F.getName() << " because "  << e.what() << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(Form const &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << "'" << this->getName() << " executed " << form.getName() << "'." << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "'" << this->getName() << "' could not execute form '" << form.getName() << "': " << e.what() << std::endl;
+	}
+
+
 }

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 13:59:08 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/24 18:05:18 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/25 17:16:16 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,14 @@
 
 #include <string>
 #include <iostream>
+#include <Form.hpp>
 
 #define MAX_GRADE 1
 #define MIN_GRADE 150
 #define EXCEPTION "[Exception] Grade is too low"
+#define EXCEPTION2 "[Exception] is_signed not true"
+
+class Form;
 
 class Bureaucrat
 {
@@ -35,6 +39,9 @@ public:
 
 	std::string getName(void) const;
 	int getGrade(void) const;
+
+	void signForm(Form &) const ;
+	void executeForm(Form const &);
 
 private:
 	void GradeTooHighException(const std::string);

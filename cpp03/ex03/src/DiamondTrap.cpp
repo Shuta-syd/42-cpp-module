@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 20:14:59 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/24 15:23:54 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/25 17:07:12 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ DiamondTrap::DiamondTrap() : FragTrap()
 	std::cout << "[DiamondTrap] Default constructor is called" << std::endl;
 	ClapTrap::_name += "_clap_name";
 	this->_hp = FragTrap::_hp;
-	this->_ep = ScavTrap::_hp;
-	this->_atk = FragTrap::_hp;
+	this->_ep = ScavTrap::_ep;
+	this->_atk = FragTrap::_atk;
 }
 
 DiamondTrap::DiamondTrap(std::string name) : FragTrap(name)
@@ -27,8 +27,8 @@ DiamondTrap::DiamondTrap(std::string name) : FragTrap(name)
 	ClapTrap::_name =  name + "_clap_name";
 	this->_name = name;
 	this->_hp = FragTrap::_hp;
-	this->_ep = ScavTrap::_hp;
-	this->_atk = FragTrap::_hp;
+	this->_ep = ScavTrap::_ep;
+	this->_atk = FragTrap::_atk;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &cp)

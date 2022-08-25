@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 18:23:44 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/23 17:32:57 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/25 17:00:33 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ FragTrap &FragTrap::operator=(const FragTrap &cp)
 
 void FragTrap::highFivesGuys(void)
 {
-
 	if (_hp <= 0)
 	{
 		std::cout << "ClapTrap " << _name << " is died" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 13:59:08 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/24 18:41:02 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/25 14:54:37 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #define MAX_GRADE 1
 #define MIN_GRADE 150
 #define EXCEPTION "[Exception] Grade is too low"
+#define EXCEPTION2 "[Exception] is_signed not true"
 
 class Form;
 

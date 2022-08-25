@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:20:01 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/24 19:12:48 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/25 15:18:52 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class Bureaucrat;
 class Form
 {
 public:
-	virtual Form();
-	virtual Form(std::string, bool, const int, const int);
-	virtual Form(const Form &);
+	Form();
+	Form(std::string, bool, const int, const int);
+	Form(const Form &);
 	virtual ~Form();
 
 	Form &operator=(const Form &other);
@@ -37,10 +37,13 @@ public:
 	int getReqExe(void) const;
 
 	void beSigned(const Bureaucrat &);
+	bool isSigned(const Bureaucrat &) const ;
+	virtual void execute(Bureaucrat const &executor) const = 0;
 
 private:
-	void GradeTooHighException(const std::string);
-	void GradeTooLowException(const std::string);
+	void GradeTooHighException(const std::string) const;
+	void GradeTooLowException(const std::string) const ;
+	void NotSignedException(const std::string) const ;
 
 	const std::string name_;
 	bool is_signed_;

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 17:22:51 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/25 19:26:28 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/25 19:30:43 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,13 @@ Form *Intern::makeForm(std::string name, std::string target)
 	switch (idx)
 	{
 	case 0:
-		Form *form = new PresidentialPardonForm(target);
+		form = new PresidentialPardonForm(target);
 		break;
 	case 1:
-		Form *form = new RobotomyRequestForm(target);
+		form = new RobotomyRequestForm(target);
 		break;
 	case 2:
-		Form *form = new ShrubberyCreationForm(target);
+		form = new ShrubberyCreationForm(target);
 		break;
 	default:
 		std::cout << "Intern is not creates." << std::endl;

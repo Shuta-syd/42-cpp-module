@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 14:01:34 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/25 17:18:47 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/25 19:28:08 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <ShrubberyCreationForm.hpp>
 #include <RobotomyRequestForm.hpp>
 #include <PresidentialPardonForm.hpp>
+#include <Intern.hpp>
 #include <cstdlib>
 #include <iostream>
 
@@ -21,32 +22,35 @@ int main(void)
 {
 
 	{
-		ShrubberyCreationForm form("garden");
-		Bureaucrat bob("Bob", 138);
+		std::cout << "## TEST 1 ##" << std::endl;
 
-		std::cout << form << std::endl;
-		std::cout << bob << std::endl;
-		bob.signForm(form);
-		bob.executeForm(form);
-		std::cout << "Incrementing " << bob.getName() << "'s grade" << std::endl;
-		bob.incrementGrade();
-		bob.executeForm(form);
+		Intern intern;
+
+		intern.makeForm("", "me");
+		intern.makeForm("abdsfsd", "me");
+		intern.makeForm("creation shrubbery", "home");
 	}
-	std::cout << "----------------------------------" << std::endl;
 	{
-		RobotomyRequestForm form("target2");
-		Bureaucrat jim("Jim", 30);
+		std::cout << "## TEST 2 ##" << std::endl;
 
-		jim.signForm(form);
-		jim.executeForm(form);
-	}
-	std::cout << "----------------------------------" << std::endl;
-	{
-		PresidentialPardonForm form("target3");
-		Bureaucrat tom("Tom", 2);
+		Intern intern;
+		Bureaucrat bureaucrate("Steve", MAX_GRADE);
+		Form *form;
 
-		tom.signForm(form);
-		tom.executeForm(form);
+		form = intern.makeForm("robotomy request", "Bender");
+		bureaucrate.signForm(*form);
+		bureaucrate.executeForm(*form);
+		delete form;
+
+		form = intern.makeForm("presidential pardon", "Bender");
+		bureaucrate.signForm(*form);
+		bureaucrate.executeForm(*form);
+		delete form;
+
+		form = intern.makeForm("shrubbery creation", "home");
+		bureaucrate.signForm(*form);
+		bureaucrate.executeForm(*form);
+		delete form;
 	}
 	return 0;
 }

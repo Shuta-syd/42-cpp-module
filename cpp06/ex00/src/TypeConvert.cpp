@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 13:41:45 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/26 21:40:22 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/26 21:54:20 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,11 +153,11 @@ void TypeConvert::convertInt(void)
 		std::cout << "char: '" << ch << "'" << std::endl;
 	else
 		std::cout << "char: Non displayable" << std::endl;
-	if (d > INT_MAX && d < INT_MIN)
+	if (d <= INT_MAX && d >= INT_MIN)
 	{
 		std::cout << "int: " << i << std::endl;
-		std::cout << "int: " << f << std::endl;
-		std::cout << "int: " << d << std::endl;
+		std::cout << "float: " << f << ".0f" << std::endl;
+		std::cout << "double: " << d << ".0" <<  std::endl;
 	}
 	else
 	{
@@ -178,11 +178,14 @@ void TypeConvert::convertFloat(void)
 		std::cout << "char: '" << ch << "'" << std::endl;
 	else
 		std::cout << "char: Non displayable" << std::endl;
-	if (d > FLT_MAX && d < FLT_MIN)
+	if (d <= FLT_MAX && d >= FLT_MIN)
 	{
-		std::cout << "int: " << i << std::endl;
-		std::cout << "int: " << f << std::endl;
-		std::cout << "int: " << d << std::endl;
+		if (d <= INT_MAX && d >= INT_MIN)
+			std::cout << "int: " << i << std::endl;
+		else
+			std::cout << "int: Int overflow" << std::endl;
+		std::cout << "float: " << f << ".0f" << std::endl;
+		std::cout << "double: " << d << ".0" << std::endl;
 	}
 	else
 	{
@@ -192,6 +195,27 @@ void TypeConvert::convertFloat(void)
 	}
 }
 
+void TypeConvert::convertDouble(void)
+{
+	double d = strtod(literal_.c_str(), NULL);
+	int i = static_cast<int>(d);
+	char ch = static_cast<char>(d);
+	float f = static_cast<float>(d);
+
+	if (isprint(ch) && d < 256 && d > 0)
+		std::cout << "char: '" << ch << "'" << std::endl;
+	else
+		std::cout << "char: Non displayable" << std::endl;
+	if (d <= INT_MAX && d >= INT_MIN)
+		std::cout << "int: " << i << std::endl;
+	else
+		std::cout << "int: Int overflow" << std::endl;
+	if (d <= FLT_MAX && d >= FLT_MIN)
+		std::cout << "float: " << f << ".0f" << std::endl;
+	else
+		std::cout << "float: Float overflow" << std::endl;
+	std::cout << "double: " << d << ".0" << std::endl;
+}
 
 void TypeConvert::converter(void)
 {
@@ -205,6 +229,13 @@ void TypeConvert::converter(void)
 			convertFloat();
 		else if (checkDouble())
 			convertDouble();
+		else
+		{
+			std::cout << "char: impossible" << std::endl;
+			std::cout << "int: impossible" << std::endl;
+			std::cout << "float: impossible" << std::endl;
+			std::cout << "double: impossible" << std::endl;
+		}
 	}
 	return;
 }

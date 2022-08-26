@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 13:42:07 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/26 20:11:42 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/26 21:06:31 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class TypeConvert
 {
 public:
 	TypeConvert();
-	TypeConvert(const char *);
+	TypeConvert(std::string literal);
 	TypeConvert(const TypeConvert &);
 	~TypeConvert();
 
@@ -43,6 +43,7 @@ private:
 	void convertDouble(void);
 
 	std::string literal_;
+	bool minus_;
 };
 
 #endif // TYPECONVERT_HPP

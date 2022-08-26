@@ -6,11 +6,11 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 23:42:21 by shogura           #+#    #+#              #
-#    Updated: 2022/08/24 15:27:29 by shogura          ###   ########.fr        #
+#    Updated: 2022/08/26 13:39:00 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME = convert
 
 CXX = c++
 

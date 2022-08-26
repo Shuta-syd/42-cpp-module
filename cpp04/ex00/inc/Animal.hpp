@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 10:19:13 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/18 19:48:36 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/26 13:04:12 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 
 	Animal &operator=(const Animal &);
 
-	void makeSound(void) const;
+	virtual void makeSound(void) const;
 	std::string getType(void) const;
 
 protected:

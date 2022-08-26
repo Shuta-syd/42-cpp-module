@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 13:41:45 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/26 21:13:33 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/26 21:26:10 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,15 +76,35 @@ bool TypeConvert::checkChar(void)
 bool TypeConvert::checkInt(void)
 {
 	if (literal_[0] == '-')
-	{
 		literal_.erase(0, 1);
-		minus_ = true;
-	}
 	for (size_t i = 0; i < literal_.length(); i++)
 	{
-		if (isdigit(literal_[i]))
+		if (!isdigit(literal_[i]))
 			return false;
 	}
+	return true;
+}
+
+bool TypeConvert::checkFloat(void)
+{
+	int i = 0;
+
+	if (literal_[i] == '-')
+		i++;
+	if (!isdigit(literal_[i]))
+		return false;
+	while (isdigit(literal_[i]))
+		i++;
+	if (literal_[i++] != '.')
+		return false;
+	if (!isdigit(literal_[i]))
+		return false;
+	while (isdigit(literal_[i]))
+		i++;
+	if (literal_[i++] != 'f')
+		return false;
+	if (literal_[i])
+		return false;
 	return true;
 }
 

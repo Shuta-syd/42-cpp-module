@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 13:41:45 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/26 21:26:10 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/26 21:38:07 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,11 +140,35 @@ void TypeConvert::convertInt(void)
 	}
 	else
 	{
-		std::cout << "int: It's overflow" << std::endl;
-		std::cout << "float: It's overflow" << std::endl;
-		std::cout << "double: It's overflow" << std::endl;
+		std::cout << "int: Int overflow" << std::endl;
+		std::cout << "float: Int overflow" << std::endl;
+		std::cout << "double: Int overflow" << std::endl;
 	}
+}
 
+void TypeConvert::convertFloat(void)
+{
+	double d = strtod(literal_.c_str(), NULL);
+	int i = static_cast<int>(d);
+	char ch = static_cast<char>(d);
+	float f = static_cast<float>(d);
+
+	if (isprint(ch) && d < 256 && d > 0)
+		std::cout << "char: '" << ch << "'" << std::endl;
+	else
+		std::cout << "char: Non displayable" << std::endl;
+	if (d > FLT_MAX && d < FLT_MIN)
+	{
+		std::cout << "int: " << i << std::endl;
+		std::cout << "int: " << f << std::endl;
+		std::cout << "int: " << d << std::endl;
+	}
+	else
+	{
+		std::cout << "int: Float overflow" << std::endl;
+		std::cout << "float: Float overflow" << std::endl;
+		std::cout << "double: Float overflow" << std::endl;
+	}
 }
 
 void TypeConvert::converter(void)

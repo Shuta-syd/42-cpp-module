@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 13:42:07 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/26 21:06:31 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/26 21:37:40 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <cfloat>
 
 class TypeConvert
 {

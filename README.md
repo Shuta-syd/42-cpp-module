@@ -11,4 +11,6 @@ Inheritance
 ### C++ Module04
 Subtype polymorphism, abstract classes, interfaces
 ### C++ Module05
-Repetition and Exceptions
+Repetition and Exceptions  
+### C++ Module06  
+C++ casts

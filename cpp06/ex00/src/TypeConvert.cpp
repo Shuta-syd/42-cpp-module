@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 13:41:45 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/26 21:38:07 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/26 21:40:22 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,27 @@ bool TypeConvert::checkFloat(void)
 	return true;
 }
 
+bool TypeConvert::checkDouble(void)
+{
+	int i = 0;
+
+	if (literal_[i] == '-')
+		i++;
+	if (!isdigit(literal_[i]))
+		return false;
+	while (isdigit(literal_[i]))
+		i++;
+	if (literal_[i++] != '.')
+		return false;
+	if (!isdigit(literal_[i]))
+		return false;
+	while (isdigit(literal_[i]))
+		i++;
+	if (literal_[i])
+		return false;
+	return true;
+}
+
 void TypeConvert::convertChar(void)
 {
 	char ch = literal_[0];
@@ -170,6 +191,7 @@ void TypeConvert::convertFloat(void)
 		std::cout << "double: Float overflow" << std::endl;
 	}
 }
+
 
 void TypeConvert::converter(void)
 {

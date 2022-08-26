@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 13:42:07 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/26 21:37:40 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/26 22:07:34 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ private:
 	void convertDouble(void);
 
 	std::string literal_;
-	bool minus_;
+	char minus_;
+	std::string Finfo_;
+	std::string Dinfo_;
 };
 
 #endif // TYPECONVERT_HPP

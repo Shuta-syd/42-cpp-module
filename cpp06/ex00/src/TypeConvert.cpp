@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 13:41:45 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/26 21:54:20 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/26 22:10:19 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ TypeConvert::TypeConvert()
 {
 }
 
-TypeConvert::TypeConvert(std::string literal) : literal_(literal)
+TypeConvert::TypeConvert(std::string literal) : literal_(literal), minus_('\0'), Finfo_("f")
 {
 }
 
@@ -76,7 +76,10 @@ bool TypeConvert::checkChar(void)
 bool TypeConvert::checkInt(void)
 {
 	if (literal_[0] == '-')
+	{
 		literal_.erase(0, 1);
+		minus_ = '-';
+	}
 	for (size_t i = 0; i < literal_.length(); i++)
 	{
 		if (!isdigit(literal_[i]))
@@ -90,7 +93,10 @@ bool TypeConvert::checkFloat(void)
 	int i = 0;
 
 	if (literal_[i] == '-')
+	{
 		i++;
+		minus_ = '-';
+	}
 	if (!isdigit(literal_[i]))
 		return false;
 	while (isdigit(literal_[i]))
@@ -99,6 +105,11 @@ bool TypeConvert::checkFloat(void)
 		return false;
 	if (!isdigit(literal_[i]))
 		return false;
+	else if (literal_[i] == '0')
+	{
+		Finfo_ = ".0f";
+		Dinfo_ = ".0";
+	}
 	while (isdigit(literal_[i]))
 		i++;
 	if (literal_[i++] != 'f')
@@ -113,7 +124,10 @@ bool TypeConvert::checkDouble(void)
 	int i = 0;
 
 	if (literal_[i] == '-')
+	{
 		i++;
+		minus_ = '-';
+	}
 	if (!isdigit(literal_[i]))
 		return false;
 	while (isdigit(literal_[i]))
@@ -122,6 +136,11 @@ bool TypeConvert::checkDouble(void)
 		return false;
 	if (!isdigit(literal_[i]))
 		return false;
+	else if (literal_[i] == '0')
+	{
+		Finfo_ = ".0f";
+		Dinfo_ = ".0";
+	}
 	while (isdigit(literal_[i]))
 		i++;
 	if (literal_[i])
@@ -137,9 +156,9 @@ void TypeConvert::convertChar(void)
 	double d = static_cast<double>(i);
 
 	std::cout << "char: '" << ch << "'" << std::endl;
-	std::cout << "Int: '" << i << std::endl;
-	std::cout << "float: '" << f << ".0f" << std::endl;
-	std::cout << "double: '" << d << ".0" << std::endl;
+	std::cout << "Int: " << i << std::endl;
+	std::cout << "float: " << f << ".0f" << std::endl;
+	std::cout << "double: " << d << ".0" << std::endl;
 }
 
 void TypeConvert::convertInt(void)
@@ -155,9 +174,9 @@ void TypeConvert::convertInt(void)
 		std::cout << "char: Non displayable" << std::endl;
 	if (d <= INT_MAX && d >= INT_MIN)
 	{
-		std::cout << "int: " << i << std::endl;
-		std::cout << "float: " << f << ".0f" << std::endl;
-		std::cout << "double: " << d << ".0" <<  std::endl;
+		std::cout << "int: " << minus_ << i << std::endl;
+		std::cout << "float: " << minus_ << f << ".0f" << std::endl;
+		std::cout << "double: " << minus_ << d << ".0" << std::endl;
 	}
 	else
 	{
@@ -181,11 +200,11 @@ void TypeConvert::convertFloat(void)
 	if (d <= FLT_MAX && d >= FLT_MIN)
 	{
 		if (d <= INT_MAX && d >= INT_MIN)
-			std::cout << "int: " << i << std::endl;
+			std::cout << "int: " << minus_ << i << std::endl;
 		else
 			std::cout << "int: Int overflow" << std::endl;
-		std::cout << "float: " << f << ".0f" << std::endl;
-		std::cout << "double: " << d << ".0" << std::endl;
+		std::cout << "float: " << minus_ << f << Finfo_ << std::endl;
+		std::cout << "double: " << minus_ << d << Dinfo_ << std::endl;
 	}
 	else
 	{
@@ -207,14 +226,14 @@ void TypeConvert::convertDouble(void)
 	else
 		std::cout << "char: Non displayable" << std::endl;
 	if (d <= INT_MAX && d >= INT_MIN)
-		std::cout << "int: " << i << std::endl;
+		std::cout << "int: " << minus_ << i << std::endl;
 	else
 		std::cout << "int: Int overflow" << std::endl;
 	if (d <= FLT_MAX && d >= FLT_MIN)
-		std::cout << "float: " << f << ".0f" << std::endl;
+		std::cout << "float: " << minus_ << f << Finfo_ << std::endl;
 	else
 		std::cout << "float: Float overflow" << std::endl;
-	std::cout << "double: " << d << ".0" << std::endl;
+	std::cout << "double: " << minus_ << d << Dinfo_ << std::endl;
 }
 
 void TypeConvert::converter(void)
@@ -239,3 +258,9 @@ void TypeConvert::converter(void)
 	}
 	return;
 }
+
+/*
+	メモ
+	need to support things
+	- 42.0f
+*/

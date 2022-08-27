@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 20:07:57 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/27 13:55:05 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/27 15:06:35 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ Brain::~Brain()
 
 Brain &Brain::operator=(const Brain& cp)
 {
-	(void)ideas_;
+	for (size_t i = 0; i < 100; i++)
+		ideas_[i] = cp.ideas_[i];
 	return *this;
 }

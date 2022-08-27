@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 10:19:16 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/26 13:07:56 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/27 13:55:32 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Animal::~Animal()
 
 Animal &Animal::operator=(const Animal &cp)
 {
-	(void)cp;
+	type_ = cp.type_;
 	return *this;
 }
 

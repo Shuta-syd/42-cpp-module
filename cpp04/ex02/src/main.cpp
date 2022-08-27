@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 10:51:24 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/25 19:47:16 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/27 13:50:06 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int main()
 
 	Dog *test = new Dog();
 	test->makeSound();
-	test->Animal::makeSound();
 	delete test;
 	return 0;
 }

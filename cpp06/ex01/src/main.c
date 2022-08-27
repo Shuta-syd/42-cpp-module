@@ -1,35 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 20:07:57 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/27 13:55:05 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/26 22:29:10 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/26 22:29:15 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Brain.hpp>
-
-Brain::Brain()
+int main(int argc, char const *argv[])
 {
-	std::cout << "[Brain] Default Constructor called" << std::endl;
-}
-
-Brain::Brain(const Brain& cp)
-{
-	*this = cp;
-	std::cout << "[Brain] Copy Constructor called" << std::endl;
-}
-
-Brain::~Brain()
-{
-	std::cout << "[Brain] Destructor called" << std::endl;
-}
-
-Brain &Brain::operator=(const Brain& cp)
-{
-	(void)ideas_;
-	return *this;
+	
+	return 0;
 }

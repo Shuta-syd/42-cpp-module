@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/08 10:19:13 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/27 20:37:19 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/27 18:24:16 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/27 18:25:36 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined(ANIMAL_HPP)
-#define ANIMAL_HPP
+#if !defined(C_HPP)
+#define C_HPP
 
-#include <string>
-#include <iostream>
+#include <Base.hpp>
 
-class Animal
+class C : public Base
 {
 public:
-	Animal();
-	Animal(std::string);
-	Animal(const Animal &);
-	virtual ~Animal();
-
-	Animal &operator=(const Animal &);
-
-	virtual void makeSound(void) const;
-	std::string getType(void) const;
-
-protected:
-	std::string type_;
+	C();
+	~C();
 };
 
-#endif // ANIMAL_HPP
+#endif // A_HPP

@@ -35,7 +35,7 @@ WrongAnimal::~WrongAnimal()
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &cp)
 {
-	(void)cp;
+	type_ = cp.type_;
 	return *this;
 }
 

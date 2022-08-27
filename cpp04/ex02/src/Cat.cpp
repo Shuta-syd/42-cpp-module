@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 10:49:11 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/18 21:26:51 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/27 13:56:39 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Cat::~Cat()
 
 Cat &Cat::operator=(const Cat &cp)
 {
-	(void)cp;
+	brain_ = cp.brain_;
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 10:19:16 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/18 19:48:24 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/27 13:50:39 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ Animal::Animal(std::string type) : type_(type)
 	std::cout << "[Animal] Default Constructor is called" << std::endl;
 }
 
-Animal::Animal(const Animal &cp)
+Animal::Animal(const Animal &other)
 {
 	std::cout << "[Animal] copy Constructor is called" << std::endl;
-	*this = cp;
+	*this = other;
 }
 
 Animal::~Animal()
@@ -33,9 +33,9 @@ Animal::~Animal()
 	std::cout << "[Animal] Destructor is called" << std::endl;
 }
 
-Animal &Animal::operator=(const Animal &cp)
+Animal &Animal::operator=(const Animal &other)
 {
-	(void)cp;
+	type_ = other.type_;
 	return *this;
 }
 

@@ -6,11 +6,11 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 23:42:21 by shogura           #+#    #+#              #
-#    Updated: 2022/08/27 21:57:18 by shogura          ###   ########.fr        #
+#    Updated: 2022/08/27 21:26:05 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex03
+NAME = ex00
 
 CXX = c++
 
@@ -46,7 +46,6 @@ $(NAME):$(OBJS)
 clean:
 	$(RM) $(OBJS)
 	$(RM) $(NAME)
-	$(RM) *.shrubbery
 	@$(RM) $(OBJDIR)
 
 fclean:clean

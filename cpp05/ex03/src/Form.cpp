@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:20:21 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/25 15:19:03 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/27 21:51:05 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,19 @@ Form &Form::operator=(const Form &other)
 	return *this;
 }
 
-void Form::GradeTooHighException(const std::string msg) const
+const char *Form::GradeTooHighException::what() const throw()
 {
-	throw std::out_of_range(msg);
+	return "[Exception] Grade is too high";
 }
 
-void Form::GradeTooLowException(const std::string msg) const
+const char *Form::GradeTooLowException::what() const throw()
 {
-	throw std::out_of_range(msg);
+	return "[Exception] Grade is too low";
 }
 
-void Form::NotSignedException(const std::string msg) const
+const char *Form::NotSignedException::what() const throw()
 {
-	throw (msg);
+	return "[Exception] is_signed not true";
 }
 
 std::string Form::getName(void) const
@@ -81,15 +81,15 @@ std::ostream &operator<<(std::ostream &stream, const Form &F)
 void Form::beSigned(const Bureaucrat &b)
 {
 	if (b.getGrade() > req_sign_)
-		Form::GradeTooLowException(EXCEPTION);
+		throw(Form::GradeTooLowException());
 	is_signed_ = true;
 }
 
 bool Form::isSigned(const Bureaucrat &exe) const
 {
 	if (getIsSigned() == false)
-		Form::NotSignedException(EXCEPTION2);
+		throw(Form::NotSignedException());
 	else if (exe.getGrade() > getReqExe())
-		Form::GradeTooLowException(EXCEPTION);
+		throw(Form::GradeTooLowException());
 	return true;
 }

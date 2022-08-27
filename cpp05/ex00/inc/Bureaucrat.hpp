@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 13:59:08 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/24 18:05:18 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/27 21:40:08 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 
 #include <string>
 #include <iostream>
+#include <exception>
 
 #define MAX_GRADE 1
 #define MIN_GRADE 150
-#define EXCEPTION "[Exception] Grade is too low"
+#define HighException "[Exception] Grade is too high"
+#define LowException "[Exception] Grade is too low"
 
 class Bureaucrat
 {
@@ -37,8 +39,15 @@ public:
 	int getGrade(void) const;
 
 private:
-	void GradeTooHighException(const std::string);
-	void GradeTooLowException(const std::string);
+	class GradeTooHighException : public std::exception {
+			virtual const char *what() const throw();
+	};
+
+	class GradeTooLowException : public std::exception
+	{
+		virtual const char *what() const throw();
+	};
+
 	const std::string name_;
 	int grade_;
 };

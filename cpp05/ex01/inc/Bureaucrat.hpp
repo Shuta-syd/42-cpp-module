@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 13:59:08 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/24 18:41:02 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/27 21:46:04 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 #include <string>
 #include <iostream>
+#include <exception>
 #include <Form.hpp>
 
 #define MAX_GRADE 1
 #define MIN_GRADE 150
-#define EXCEPTION "[Exception] Grade is too low"
+#define HighException "[Exception] Grade is too high"
+#define LowException "[Exception] Grade is too low"
 
 class Form;
 
@@ -39,11 +41,19 @@ public:
 	std::string getName(void) const;
 	int getGrade(void) const;
 
-	void signForm(Form &) const ;
+	void signForm(Form &) const;
 
 private:
-	void GradeTooHighException(const std::string);
-	void GradeTooLowException(const std::string);
+	class GradeTooHighException : public std::exception
+	{
+		virtual const char *what() const throw();
+	};
+
+	class GradeTooLowException : public std::exception
+	{
+		virtual const char *what() const throw();
+	};
+
 	const std::string name_;
 	int grade_;
 };

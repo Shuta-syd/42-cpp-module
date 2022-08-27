@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 13:59:42 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/24 18:05:34 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/27 21:41:52 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ Bureaucrat::Bureaucrat() : name_("unknown"), grade_(MIN_GRADE)
 Bureaucrat::Bureaucrat(std::string name, int grade) : name_(name), grade_(grade)
 {
 	if (grade > MIN_GRADE)
-		Bureaucrat::GradeTooLowException(EXCEPTION);
+		throw(Bureaucrat::GradeTooLowException());
 	else if (grade < MAX_GRADE)
-		Bureaucrat::GradeTooHighException(EXCEPTION);
+		throw(Bureaucrat::GradeTooHighException());
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other)
@@ -59,30 +59,30 @@ int Bureaucrat::getGrade(void) const
 	return this->grade_;
 }
 
-void Bureaucrat::GradeTooHighException(const std::string msg)
+const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-	throw std::out_of_range(msg);
+	return HighException;
 }
 
-void Bureaucrat::GradeTooLowException(const std::string msg)
+const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-	throw std::out_of_range(msg);
+	return LowException;
 }
 
 void Bureaucrat::incrementGrade(void)
 {
 	if (grade_ > MIN_GRADE)
-		Bureaucrat::GradeTooLowException(EXCEPTION);
+		throw(Bureaucrat::GradeTooLowException());
 	else if (grade_ < MAX_GRADE)
-		Bureaucrat::GradeTooHighException(EXCEPTION);
+		throw(Bureaucrat::GradeTooHighException());
 	grade_--;
 }
 
 void Bureaucrat::decrementGrade(void)
 {
 	if (grade_ > MIN_GRADE)
-		Bureaucrat::GradeTooLowException(EXCEPTION);
+		throw(Bureaucrat::GradeTooLowException());
 	else if (grade_ < MAX_GRADE)
-		Bureaucrat::GradeTooHighException(EXCEPTION);
+		throw(Bureaucrat::GradeTooHighException());
 	grade_++;
 }

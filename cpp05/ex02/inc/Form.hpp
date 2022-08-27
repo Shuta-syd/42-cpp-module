@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:20:01 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/25 15:18:52 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/27 21:51:49 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include <Bureaucrat.hpp>
 #define MAX_GRADE 1
 #define MIN_GRADE 150
-#define EXCEPTION "[Exception] Grade is too low"
 
 class Bureaucrat;
 
@@ -41,9 +40,20 @@ public:
 	virtual void execute(Bureaucrat const &executor) const = 0;
 
 private:
-	void GradeTooHighException(const std::string) const;
-	void GradeTooLowException(const std::string) const ;
-	void NotSignedException(const std::string) const ;
+	class GradeTooHighException : public std::exception
+	{
+		virtual const char *what() const throw();
+	};
+
+	class GradeTooLowException : public std::exception
+	{
+		virtual const char *what() const throw();
+	};
+
+	class NotSignedException : public std::exception
+	{
+		virtual const char *what() const throw();
+	};
 
 	const std::string name_;
 	bool is_signed_;

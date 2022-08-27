@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 13:59:08 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/25 17:16:16 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/27 21:51:38 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 #define MAX_GRADE 1
 #define MIN_GRADE 150
-#define EXCEPTION "[Exception] Grade is too low"
-#define EXCEPTION2 "[Exception] is_signed not true"
+#define HighException "[Exception] Grade is too high"
+#define LowException "[Exception] Grade is too low"
 
 class Form;
 
@@ -44,8 +44,16 @@ public:
 	void executeForm(Form const &);
 
 private:
-	void GradeTooHighException(const std::string);
-	void GradeTooLowException(const std::string);
+	class GradeTooHighException : public std::exception
+	{
+		virtual const char *what() const throw();
+	};
+
+	class GradeTooLowException : public std::exception
+	{
+		virtual const char *what() const throw();
+	};
+
 	const std::string name_;
 	int grade_;
 };

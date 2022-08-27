@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:20:21 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/24 19:02:42 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/27 21:45:25 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,20 +36,20 @@ Form &Form::operator=(const Form &other)
 	return *this;
 }
 
-void Form::GradeTooHighException(const std::string msg)
+const char *Form::GradeTooHighException::what() const throw()
 {
-	throw std::out_of_range(msg);
+	return HighException;
 }
 
-void Form::GradeTooLowException(const std::string msg)
+const char *Form::GradeTooLowException::what() const throw()
 {
-	throw std::out_of_range(msg);
+	return LowException;
 }
 
 void Form::beSigned(const Bureaucrat &b)
 {
 	if (b.getGrade() > req_sign_)
-		Form::GradeTooLowException(EXCEPTION);
+		throw (Form::GradeTooLowException());
 	is_signed_ = true;
 }
 

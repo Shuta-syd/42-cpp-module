@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 22:32:48 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/29 17:10:31 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/29 20:28:22 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 #define ITER_HPP
 
 template <typename T>
-void iter(T *arr, int len, )
+void iter(T *arr, int size, void (*fnc)(const T&))
+{
+	int i = 0;
+
+	if (!arr || !size || !fnc)
+		return ;
+	while (i < size)
+		fnc(arr[i++]);
+}
 
 #endif // ITER_HPP

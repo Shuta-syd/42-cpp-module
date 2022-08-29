@@ -6,27 +6,34 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 22:21:35 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/27 22:28:51 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/29 20:26:23 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-#include <whatever.hpp>
+#include <iter.hpp>
+
+template <class T>
+void print(const T &a)
+{
+	std::cout << a;
+}
 
 int main(void)
 {
-	int a = 2;
-	int b = 3;
-	::swap(a, b);
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-	std::cout << "min( a, b ) = " << ::min(a, b) << std::endl;
-	std::cout << "max( a, b ) = " << ::max(a, b) << std::endl;
-	std::string c = "chaine1";
-	std::string d = "chaine2";
-	::swap(c, d);
-	std::cout << "c = " << c << ", d = " << d << std::endl;
-	std::cout << "min( c, d ) = " << ::min(c, d) << std::endl;
-	std::cout << "max( c, d ) = " << ::max(c, d) << std::endl;
-	return 0;
+	int intarr[5] = {0, 1, 2, 3, 4};
+	char chararr[3] = {'a', 'b', 'c'};
+	std::string strarr[4] = {"Hel", "lo, w", "orl", "d!"};
+
+	iter(intarr, 5, print<int>);
+	std::cout << std::endl;
+
+	iter(chararr, 3, print<char>);
+	std::cout << std::endl;
+
+	iter(strarr, 4, print<std::string>);
+	std::cout << std::endl;
+
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 14:01:34 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/27 21:58:13 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/29 19:54:47 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 int main(void)
 {
-
+	try
 	{
 		std::cout << "## TEST 1 ##" << std::endl;
 
@@ -30,6 +30,12 @@ int main(void)
 		intern.makeForm("abdsfsd", "me");
 		intern.makeForm("creation shrubbery", "home");
 	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	try
 	{
 		std::cout << "## TEST 2 ##" << std::endl;
 
@@ -51,6 +57,10 @@ int main(void)
 		bureaucrate.signForm(*form);
 		bureaucrate.executeForm(*form);
 		delete form;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
 	}
 	return 0;
 }

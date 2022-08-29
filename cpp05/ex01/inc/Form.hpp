@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:20:01 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/27 21:47:14 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/29 19:28:18 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Form
 {
 public:
 	Form();
-	Form(std::string, bool, const int, const int);
+	Form(std::string,  const int, const int);
 	Form(const Form &);
 	~Form();
 

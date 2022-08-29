@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 13:59:42 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/27 21:54:02 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/29 19:40:06 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,20 +71,20 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 
 void Bureaucrat::incrementGrade(void)
 {
+	grade_--;
 	if (grade_ > MIN_GRADE)
 		throw(Bureaucrat::GradeTooLowException());
 	else if (grade_ < MAX_GRADE)
 		throw(Bureaucrat::GradeTooHighException());
-	grade_--;
 }
 
 void Bureaucrat::decrementGrade(void)
 {
+	grade_++;
 	if (grade_ > MIN_GRADE)
 		throw(Bureaucrat::GradeTooLowException());
 	else if (grade_ < MAX_GRADE)
 		throw(Bureaucrat::GradeTooHighException());
-	grade_++;
 }
 
 void Bureaucrat::signForm(Form &F) const
@@ -111,6 +111,4 @@ void Bureaucrat::executeForm(Form const &form)
 	{
 		std::cerr << "'" << this->getName() << "' could not execute form '" << form.getName() << "': " << e.what() << std::endl;
 	}
-
-
 }

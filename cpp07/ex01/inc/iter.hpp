@@ -1,41 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/27 22:21:57 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/27 22:31:40 by shogura          ###   ########.fr       */
+/*   Created: 2022/08/27 22:32:48 by shogura           #+#    #+#             */
+/*   Updated: 2022/08/29 17:10:31 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined(WHATEVER_HPP)
-#define WHATEVER_HPP
+#if !defined(ITER_HPP)
+#define ITER_HPP
 
 template <typename T>
-void swap(T &a, T &b)
-{
-	T tmp;
-	tmp = a;
-	a = b;
-	b = tmp;
-}
+void iter(T *arr, int len, )
 
-template <typename T>
-T min(T a, T b)
-{
-	if (a > b || a == b)
-		return b;
-	return a;
-}
-
-template <typename T>
-T max(T a, T b)
-{
-	if (a < b || a == b)
-		return b;
-	return a;
-}
-
-#endif // WHATEVER_HPP
+#endif // ITER_HPP

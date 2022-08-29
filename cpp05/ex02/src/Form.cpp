@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:20:21 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/27 21:51:05 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/29 19:43:38 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@ Form::Form() : name_("unknown"), is_signed_(false), req_sign_(MIN_GRADE), req_ex
 {
 }
 
-Form::Form(std::string name, bool is_signed, const int req_sign, const int req_exe) : name_(name), is_signed_(is_signed), req_sign_(req_sign), req_exe_(req_exe)
+Form::Form(std::string name, const int req_sign, const int req_exe) : name_(name), is_signed_(false), req_sign_(req_sign), req_exe_(req_exe)
 {
-
+	if (req_sign > MIN_GRADE || req_exe > MIN_GRADE)
+		throw(Form::GradeTooLowException());
+	else if (req_sign < MAX_GRADE || req_exe < MAX_GRADE)
+		throw(Form::GradeTooHighException());
 }
 
 Form::Form(const Form &other) : req_sign_(other.req_sign_), req_exe_(other.req_exe_)
@@ -82,6 +85,8 @@ void Form::beSigned(const Bureaucrat &b)
 {
 	if (b.getGrade() > req_sign_)
 		throw(Form::GradeTooLowException());
+	else if (is_signed_ == true)
+		std::cerr << b.getName() << " couldn’t sign " << getName() << " because this form is already signed" << std::endl;
 	is_signed_ = true;
 }
 

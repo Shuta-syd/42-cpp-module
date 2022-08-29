@@ -6,17 +6,17 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 19:09:39 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/25 15:24:51 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/29 19:38:06 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <RobotomyRequestForm.hpp>
 
-RobotomyRequestForm::RobotomyRequestForm() : Form("Robotomy", false, 72, 45)
+RobotomyRequestForm::RobotomyRequestForm() : Form("Robotomy", 72, 45)
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("Robotomy", false, 72, 45), target_(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("Robotomy", 72, 45), target_(target)
 {
 }
 

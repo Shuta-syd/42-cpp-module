@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 19:09:39 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/25 16:33:40 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/29 19:35:18 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ const char *ShrubberyCreationForm::asciiTree =
 	"	   *---------*\n"
 	"	       |||\n";
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Form("Surubbery", false, 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("Surubbery", 145, 137)
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("Surubbery", false, 145, 137), target_(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("Surubbery", 145, 137), target_(target)
 {
 }
 
@@ -53,7 +53,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	if (isSigned(executor))
 	{
-		std::ofstream file((getTarget() + ".shrubbery").c_str());
+		std::ofstream file((getTarget() + "_shrubbery").c_str());
 		if (file.is_open())
 		{
 			file << asciiTree << std::endl;

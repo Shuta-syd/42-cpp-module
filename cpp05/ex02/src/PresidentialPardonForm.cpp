@@ -6,17 +6,17 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 19:09:39 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/25 16:37:48 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/29 19:37:03 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <PresidentialPardonForm.hpp>
 
-PresidentialPardonForm::PresidentialPardonForm() : Form("Presidential", false, 25, 5)
+PresidentialPardonForm::PresidentialPardonForm() : Form("Presidential", 25, 5)
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("Presidential", false, 25, 5), target_(target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("Presidential", 25, 5), target_(target)
 {
 
 }

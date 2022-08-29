@@ -6,7 +6,7 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 23:42:21 by shogura           #+#    #+#              #
-#    Updated: 2022/08/25 17:20:50 by shogura          ###   ########.fr        #
+#    Updated: 2022/08/29 19:54:07 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ $(NAME):$(OBJS)
 clean:
 	$(RM) $(OBJS)
 	$(RM) $(NAME)
-	$(RM) *.shrubbery
+	$(RM) *_shrubbery
 	@$(RM) $(OBJDIR)
 
 fclean:clean

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 14:01:34 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/24 18:39:33 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/29 19:49:26 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ int main(void)
 {
 
 	// normal pattern
+	try
 	{
-		Form formA("formA", false, 100, 100);
+		Form formA("formA", 151, 100);
 		Bureaucrat A("A", 50);
 		Bureaucrat B("B", 101);
 
@@ -31,6 +32,10 @@ int main(void)
 		B.signForm(formA);
 		std::cout << formA << std::endl;
 		std::cout << B << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
 	}
 	return 0;
 }

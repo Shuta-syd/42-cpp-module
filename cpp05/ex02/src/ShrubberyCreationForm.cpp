@@ -6,20 +6,20 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 19:09:39 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/29 19:35:18 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/30 20:51:07 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ShrubberyCreationForm.hpp>
 
 const char *ShrubberyCreationForm::asciiTree =
-	"			*\n"
+	"		    *\n"
 	"		   *-*\n"
 	"		  *---*\n"
 	"		 *-----*\n"
 	"		*-------*\n"
-	"	   *---------*\n"
-	"	       |||\n";
+	"	       *---------*\n"
+	"		   |||\n";
 
 ShrubberyCreationForm::ShrubberyCreationForm() : Form("Surubbery", 145, 137)
 {

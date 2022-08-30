@@ -16,3 +16,5 @@ Repetition and Exceptions
 C++ casts
 ### C++ Module07  
 C++ templates
+### C++ Module08  
+Templated containers, iterators, algorithms

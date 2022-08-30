@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 14:01:34 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/29 19:49:26 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/30 20:36:30 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(void)
 	// normal pattern
 	try
 	{
-		Form formA("formA", 151, 100);
+		Form formA("formA", 141, 100);
 		Bureaucrat A("A", 50);
 		Bureaucrat B("B", 101);
 

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:20:01 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/29 19:41:25 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/30 20:43:11 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,11 @@ private:
 	};
 
 	class NotSignedException : public std::exception
+	{
+		virtual const char *what() const throw();
+	};
+
+	class AlreadySignedException : public std::exception
 	{
 		virtual const char *what() const throw();
 	};

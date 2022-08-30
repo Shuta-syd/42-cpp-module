@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:20:21 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/29 19:43:50 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/30 20:43:28 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,11 @@ const char *Form::NotSignedException::what() const throw()
 	return "[Exception] is_signed not true";
 }
 
+const char *Form::AlreadySignedException::what() const throw()
+{
+	return "this form is already signed";
+}
+
 std::string Form::getName(void) const
 {
 	return name_;
@@ -86,7 +91,7 @@ void Form::beSigned(const Bureaucrat &b)
 	if (b.getGrade() > req_sign_)
 		throw(Form::GradeTooLowException());
 	else if (is_signed_ == true)
-		std::cerr << b.getName() << " couldn’t sign " << getName() << " because this form is already signed" << std::endl;
+		throw(Form::AlreadySignedException());
 	is_signed_ = true;
 }
 

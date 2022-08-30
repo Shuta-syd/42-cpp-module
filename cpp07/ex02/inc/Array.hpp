@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 20:31:06 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/30 14:31:50 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/30 14:57:19 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ public:
 	}
 
 	Array(Array const &other) {
-		*this = other;
 		std::cout << "Copy Constructor" << std::endl;
+		*this = other;
 	}
 
 	~Array() {
@@ -44,12 +44,12 @@ public:
 
 	class accessOut : public std::exception{
 		const char *what() const throw(){
-			return "[Exception] this index is out of range" << std::endl;
+			return "[Exception] this index is out of range";
 		}
-	}
+	};
 
 	Array &operator=(Array const &other){
-		delete[] arr_;
+		std::cout << "copy assignment operator" << std::endl;
 		n_ = other.n_;
 		if (n_ > 0)
 		{
@@ -65,7 +65,10 @@ public:
 			throw(accessOut());
 		return arr_[i];
 	}
-	
+
+	uint size() const {
+		return n_;
+	}
 };
 
 #endif // ARRAY_HPP

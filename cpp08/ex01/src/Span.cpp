@@ -6,17 +6,17 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 16:46:00 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/30 17:13:06 by shogura          ###   ########.fr       */
+/*   Updated: 2022/08/30 18:55:20 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Span.hpp>
 
-Span::Span() : nm_(0)
+Span::Span() : size_(0)
 {
 }
 
-Span::Span(unsigned int nm) : nm_(nm)
+Span::Span(unsigned int size) : size_(size)
 {
 }
 
@@ -30,6 +30,35 @@ Span::~Span()
 }
 
 Span &Span::operator=(const Span &other){
-	this->nm_ = other.nm_;
+	size_ = other.size_;
+	nm_ = other.nm_;
 	return *this;
+}
+
+void Span::addNumber(int n){
+	if (nm_.size() >= size_)
+		throw(std::length_error("[Exception] size limit reached"));
+	nm_.push_back(n);
+}
+
+int Span::shortestSpan(void) {
+	int shortSpan = INT_MAX;
+
+	if (nm_.size() <= 1)
+		throw(std::length_error("[Exception] not enough size to run this func"));
+	std::sort(nm_.begin(), nm_.end());
+	for (size_t i = 0; i < nm_.size() - 1; i++)
+	{
+		int diff = nm_[i + 1] - nm_[i];
+		if (diff < shortSpan && diff > 0)
+			shortSpan = diff;
+	}
+	return (shortSpan);
+}
+
+int Span::longestSpan(void) {
+	if (nm_.size() <= 1)
+		throw(std::length_error("[Exception] not enough size to run this func"));
+	std::sort(nm_.begin(), nm_.end());
+	return (nm_[nm_.size() - 1] - nm_[0]);
 }

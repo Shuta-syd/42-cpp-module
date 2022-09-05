@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 16:45:27 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/30 18:30:37 by shogura          ###   ########.fr       */
+/*   Updated: 2022/09/05 19:32:04 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ public:
 	Span &operator=(const Span &);
 
 	void addNumber(int);
+	void addNumber(int *, int);
 	int shortestSpan();
 	int longestSpan();
 

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 16:46:00 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/30 18:55:20 by shogura          ###   ########.fr       */
+/*   Updated: 2022/09/05 19:34:57 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,16 @@ void Span::addNumber(int n){
 	if (nm_.size() >= size_)
 		throw(std::length_error("[Exception] size limit reached"));
 	nm_.push_back(n);
+}
+
+void Span::addNumber(int *arr, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		if (nm_.size() >= size_)
+			throw(std::length_error("[Exception] size limit reached"));
+		nm_.push_back(arr[i]);
+	}
 }
 
 int Span::shortestSpan(void) {

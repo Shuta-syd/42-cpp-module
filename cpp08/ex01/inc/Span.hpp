@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 16:45:27 by shogura           #+#    #+#             */
-/*   Updated: 2022/09/05 19:32:04 by shogura          ###   ########.fr       */
+/*   Updated: 2022/09/07 20:31:25 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ public:
 	Span(const Span &);
 	Span &operator=(const Span &);
 
-	void addNumber(int);
-	void addNumber(int *, int);
-	int shortestSpan();
-	int longestSpan();
+	void addNumber(long);
+	void addNumber(std::vector<int> &);
+	long shortestSpan();
+	long longestSpan();
 
 private:
 	unsigned int size_;
-	std::vector<int> nm_;
+	std::vector<long> nm_;
 };
 
 #endif // SPAN_HPP

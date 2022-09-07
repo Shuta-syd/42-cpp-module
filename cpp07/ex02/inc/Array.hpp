@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 20:31:06 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/30 14:57:19 by shogura          ###   ########.fr       */
+/*   Updated: 2022/09/07 22:15:01 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 		std::cout << "Default Constructor " << std::endl;
 	}
 
-	Array(Array const &other) {
+	Array(Array const &other) : arr_(NULL) {
 		std::cout << "Copy Constructor" << std::endl;
 		*this = other;
 	}
@@ -50,6 +50,8 @@ public:
 
 	Array &operator=(Array const &other){
 		std::cout << "copy assignment operator" << std::endl;
+		if (arr_)
+			delete[] arr_;
 		n_ = other.n_;
 		if (n_ > 0)
 		{

@@ -6,12 +6,13 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 15:39:22 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/30 16:25:12 by shogura          ###   ########.fr       */
+/*   Updated: 2022/09/08 21:42:35 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <easyfind.hpp>
 #include <vector>
+#include <list>
 #include <iostream>
 #include <cstdlib>
 
@@ -24,26 +25,46 @@ void test_value(std::vector<T> &v, T value)
 		std::cout << "no occurence found for value " << value << std::endl;
 }
 
+template <typename T>
+void test_value(std::list<T> &v, T value)
+{
+	if (easyfind(v, value) != v.end())
+		std::cout << "value " << value << " found" << std::endl;
+	else
+		std::cout << "no occurence found for value " << value << std::endl;
+}
+
 int main(void)
 {
-	std::vector<int> value;
-	srand(time(NULL));
-	for (size_t i = 0; i < 10; i++)
 	{
-		int v = rand() % 150;
-		value.push_back(v);
-		std::cout << "value[" << i << "] = " << v << std::endl;
+		std::cout << "[TEST1] vector\n" << std::endl;
+		std::vector<int> value;
+		std::vector<int> key;
+		srand(time(NULL));
+		for (size_t i = 0; i < 10; i++)
+		{
+			int v = rand() % 100;
+			key.push_back(rand() % 100);
+			value.push_back(v);
+			std::cout << "value[" << i << "] = " << v << std::endl;
+		}
+		for (size_t i = 0; i < key.size(); i++)
+			test_value(value, key.at(i));
 	}
-	test_value(value, 5);
-	test_value(value, 15);
-	test_value(value, 25);
-	test_value(value, 35);
-	test_value(value, 45);
-	test_value(value, 35);
-	test_value(value, 10);
-	test_value(value, 20);
-	test_value(value, 100);
-	test_value(value, 90);
-
+	{
+		std::cout << "\n[TEST2] list\n" << std::endl;
+		std::list<int> value;
+		std::vector<int> key;
+		srand(time(NULL));
+		for (size_t i = 0; i < 10; i++)
+		{
+			int v = rand() % 100;
+			key.push_back(rand() % 100);
+			value.push_back(v);
+			std::cout << "value[" << i << "] = " << v << std::endl;
+		}
+		for (size_t i = 0; i < key.size(); i++)
+			test_value(value, key.at(i));
+	}
 	return 0;
 }

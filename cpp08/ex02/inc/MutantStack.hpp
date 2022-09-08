@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 18:59:23 by shogura           #+#    #+#             */
-/*   Updated: 2022/08/30 20:32:38 by shogura          ###   ########.fr       */
+/*   Updated: 2022/09/08 21:57:09 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,3 +42,8 @@ private:
 };
 
 #endif // MUTANTSTACK_HPP
+
+/*
+	@iterator vs const_iterator
+	https://jumble-note.blogspot.com/2014/12/c-constiterator.html
+*/
